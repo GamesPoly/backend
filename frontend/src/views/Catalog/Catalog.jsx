@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Catalog.scss'
 import AdSlider from './AdSlider/AdSlider';
 import AsideSettings from './AsideSettings/AsideSettings';
 import GamesList from './GamesList/GamesList';
 import cover1 from '@assets/cover-game4.png'
 import cover2 from '@assets/cover-game3.png'
+import axios from "axios";
 
 function Catalog() {
 
@@ -113,6 +114,19 @@ function Catalog() {
             }
         ]
     }]
+
+    useEffect(() => {
+        async function getGame() {
+            try {
+                const response = await axios.get('http://localhost:8080/api/v1/games/1');
+                console.log(response.data);
+            } catch (error) {
+                console.error(error.data);
+            }
+        }
+
+        const data = getGame();
+    }, [])
     return (  
         <main className="catalog">
             <AsideSettings />

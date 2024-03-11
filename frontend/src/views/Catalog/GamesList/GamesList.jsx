@@ -5,18 +5,6 @@ import GamesItem from './GamesItem/GamesItem';
 import axios from "axios";
 
 function GamesList({title, games}) {
-    useEffect(() => {
-        async function getGame() {
-            try {
-                const response = await axios.get('http://localhost:8080/api/v1/games/1');
-                console.log(response);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        const data = getGame();
-    }, [])
 
     return ( 
         <section className="games__list">
