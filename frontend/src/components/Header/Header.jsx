@@ -1,12 +1,37 @@
 import React from 'react';
 import './Header.scss'; 
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import logo from '@assets/logo.svg';
 import Search from './Search/Search';
 import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 import MenuButton from './MenuButton/MenuButton';
 
 const Header = ({ openMenu }) => {
+    // const login = 'test2@test.com'; // захардкодил да
+    // const password = '123456789'; // и чё вы мне сделаете
+    //
+    // // const [login, setLogin] = useState('');
+    // // const [password, setPassword] = useState('');
+    //
+    // const handleLogin = async (e) => {
+    //     e.preventDefault();
+    //
+    //     const loginData = {
+    //         login,
+    //         password,
+    //     };
+    //
+    //     try {
+    //         const response = await axios.post('http://localhost:8080/api/v1/auth/sign-in', loginData);
+    //         console.log('Авторизован успешно:', response.data);
+    //         // Место для хранения токена в хранилище/состоянии
+    //     } catch (error) {
+    //         console.error('Ошибка:', error.response ? error.response.data : error.message);
+    //     }
+    // };
+    // по такому же принципу пишем запрос на регистрацию
+
     return (
         <header className="header">
             <div className="header__wrapper">
