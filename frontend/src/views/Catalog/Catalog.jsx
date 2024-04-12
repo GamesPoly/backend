@@ -9,6 +9,7 @@ import axios from "axios";
 
 function Catalog() {
 
+
     const gamesCollections = [{
         title: 'Лучшие представители своих жанров',
         games: [
