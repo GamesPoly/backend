@@ -4,7 +4,7 @@ import {Sidebar} from "@/views/PostForm/AsideMenu/Sidebar";
 
 function PostForm() {
     const sections = ['Основная информация', 'Изображения продукта', 'Файлы игры'];
-    const [activeSection, setActiveSection] = useState('Изображения продукта');
+    const [activeSection, setActiveSection] = useState('Основная информация');
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
