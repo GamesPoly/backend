@@ -7,10 +7,12 @@
   border-radius: 15px;
   background-color: var(--background-detailed);
   transition: all 1.3s ease;
+  max-width: fit-content;
 }
 
 .card__cover {
   width: 9.45rem;
+  aspect-ratio: 1/1;
   box-shadow: $shadow-x1;
   border-radius: 6px;
   // justify-self: center;
@@ -24,6 +26,7 @@
 .card__title {
   font-size: 1.1rem;
   margin-top: 0.2rem;
+  max-width: 9.45rem;
 }
 
 .card__desc {

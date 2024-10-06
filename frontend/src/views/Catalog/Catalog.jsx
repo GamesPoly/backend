@@ -1,128 +1,75 @@
-import React from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import "./Catalog.scss";
 import AdSlider from "./components/AdSlider/AdSlider.jsx";
 import AsideSettings from "./components/AsideSettings/AsideSettings.jsx";
 import GamesList from "./components/GamesList/GamesList.jsx";
-import cover1 from "@assets/cover-game4.png";
+import SkeletonSlider from "./components/skeletons/SkeletonSlider/SkeletonSlider.jsx";
+import SkeletonGamesList from "./components/skeletons/SkeletonGamesList/SkeletonGamesList.jsx";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 function Catalog() {
-  const gamesCollections = [
-    {
-      title: "Лучшие представители своих жанров",
-      games: [
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-      ],
-    },
-    {
-      title: "Самое популярное в последнее время",
-      games: [
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-      ],
-    },
-    {
-      title: "Специально для тебя",
-      games: [
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-        {
-          name: "Simulation 23/3",
-          desc: "Платформер-головоломка с уровнями на логику и смека...",
-          cover: cover1,
-        },
-      ],
-    },
-  ];
+  const [gamesCollections, setGamesCollections] = useState([]);
+  const [adSliderGames, setAdSliderGames] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/games/?_limit=23");
+        const data = await response.json();
+
+        const adSliderGames = data.slice(0, 5);
+
+        const remainingGames = data.slice(5);
+        const gamesPerGroup = Math.ceil(remainingGames.length / 3);
+
+        const grouped = [
+          {
+            title: "Лучшие представители своих жанров",
+            games: remainingGames.slice(0, gamesPerGroup),
+          },
+          {
+            title: "Самое популярное в последнее время",
+            games: remainingGames.slice(gamesPerGroup, 2 * gamesPerGroup),
+          },
+          {
+            title: "Специально для тебя",
+            games: remainingGames.slice(2 * gamesPerGroup),
+          },
+        ];
+
+        setAdSliderGames(adSliderGames);
+        setGamesCollections(grouped);
+      } catch (error) {
+        console.error("Error fetching games:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <main className="catalog">
-      <AsideSettings />
-      <div className="catalog__wrapper">
-        <AdSlider />
-        {gamesCollections.map((list) => (
-          <GamesList title={list.title} games={list.games} key={list.title} />
-        ))}
-      </div>
+      <SkeletonTheme baseColor="#202020" highlightColor="#444">
+        <AsideSettings />
+        <div className="catalog__wrapper">
+          {!isLoading ? <AdSlider games={adSliderGames} /> : <SkeletonSlider />}
+
+          {!isLoading ? (
+            gamesCollections.map((list) => (
+              <GamesList
+                title={list.title}
+                games={list.games}
+                key={list.title}
+              />
+            ))
+          ) : (
+            <SkeletonGamesList />
+          )}
+        </div>
+      </SkeletonTheme>
     </main>
   );
 }

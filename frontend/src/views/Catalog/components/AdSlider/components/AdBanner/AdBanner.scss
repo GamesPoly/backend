@@ -3,7 +3,8 @@
 .ad-banner {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 16px;
   max-width: 58.5rem;
   width: 100%;
@@ -12,6 +13,11 @@
   color: var(--text-primary);
   box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.5);
   transition: all 1.3s ease;
+
+  &__ganre,
+  &__tag {
+    font-size: 20px;
+  }
 }
 
 .ad-banner__info {
@@ -40,13 +46,8 @@
 
 .ad-banner__tags {
   display: flex;
-  font-size: 20px;
   gap: 10px;
   color: var(--accent-color);
-  & p {
-    padding: 0;
-    margin: 0;
-  }
 }
 
 .ad-banner__link {
@@ -63,6 +64,7 @@
   font-weight: 400;
   margin: 0;
   padding: 0;
+
   &:hover {
     transition: all 0.15s ease;
     opacity: 0.85;
@@ -75,6 +77,7 @@
       transition: all 0.15s ease;
       fill: var(--primary-color);
     }
+
     & circle {
       transition: all 0.15s ease;
       fill: var(--text-primary);
@@ -85,14 +88,17 @@
     & path {
       fill: var(--primary-color);
     }
+
     & circle {
       fill: var(--text-primary);
     }
+
     &:hover {
       & path {
         transition: all 0.15s ease;
         fill: var(--text-primary);
       }
+
       & circle {
         transition: all 0.15s ease;
         fill: var(--primary-color);
@@ -131,16 +137,8 @@
     margin-bottom: 0.6rem;
   }
 
-  .ad-banner__tags {
-    font-size: 0.6rem;
-  }
-
   .ad-banner__link {
     margin-top: 0;
-  }
-
-  .ad-banner__more {
-    font-size: 0.8rem;
   }
 
   .ad-banner__arrow {
