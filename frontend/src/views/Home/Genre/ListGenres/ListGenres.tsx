@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ListGenres.scss';
-import SwitcherGenres from './SwitcherGenres/SwitcherGenres.jsx';
+import SwitcherGenres from './SwitcherGenres/SwitcherGenres';
 
 const gameGenres = [
     { genre: 'Приключения', rating: 500000 },
@@ -17,7 +17,7 @@ const ListGenres = () => {
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 4);
     const [activeGenre, setActiveGenre] = useState(popularGenres[0].genre);
-    const handleGenreClick = (genre) => {
+    const handleGenreClick = (genre: string) => {
         setActiveGenre(genre);
       };
     

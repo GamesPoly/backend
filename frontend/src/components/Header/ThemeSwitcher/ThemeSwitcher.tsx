@@ -1,6 +1,6 @@
 import './ThemeSwitcher.scss'
-import React, {useState} from 'react'
-import {useTheme} from "@/hooks/useTheme";
+import React from 'react'
+import useTheme from "@hooks/useTheme";
 
 const ThemeSwitcher = () => {
     const { theme, setTheme } = useTheme()

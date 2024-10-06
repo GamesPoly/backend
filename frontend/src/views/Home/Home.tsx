@@ -1,9 +1,9 @@
 import React from 'react';
 import './Home.scss';
-import Hero from './Hero/Hero.jsx';
-import Collection from './Collection/Collection.jsx';
-import Genre from './Genre/Genre.jsx';
-import Functions from './Functions/Functions.jsx';
+import Hero from './Hero/Hero';
+import Collection from './Collection/Collection';
+import Genre from './Genre/Genre';
+import Functions from './Functions/Functions';
 const Home = () => {
     return (
         <main className='home__wrapper'>

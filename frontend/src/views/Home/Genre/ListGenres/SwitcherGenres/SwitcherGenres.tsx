@@ -1,6 +1,13 @@
 import React from 'react';
 import './SwitcherGenres.scss';
-const SwitcherGenres = ({ children, active, onClick }) => {
+
+type SwitcherGenresProps = {
+    children: any,
+    active: boolean, 
+    onClick: any
+}
+
+const SwitcherGenres = ({ children, active, onClick }: SwitcherGenresProps) => {
     return (
         <button onClick={onClick} className={`list-genres__button switcher-genres ${active ? 'switcher-genres--active' : ''}`}>
             <p className="switcher-genres__text">{children}</p>
