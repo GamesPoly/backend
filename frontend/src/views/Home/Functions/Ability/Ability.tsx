@@ -2,7 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Ability.scss';
 
-const Ability = ({ data }) => {
+type Ability = {
+    title: string,
+    number: number,
+    desc: string,
+    url: string,
+    image: any
+}
+
+type AbilityProps = {
+    data: Ability
+}
+
+const Ability = ({ data }: AbilityProps) => {
     const { title, number, desc, url, image } = data;
 
     return (

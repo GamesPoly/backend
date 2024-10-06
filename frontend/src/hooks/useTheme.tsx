@@ -4,7 +4,7 @@ import { useState } from "react"
 const isDarkTheme = window?.matchMedia('(prefers-color-scheme: dark)').matches
 const defaultTheme = isDarkTheme ? 'dark' : 'light'
 
-export const useTheme = () => {
+const useTheme = () => {
     const [theme, setTheme] = useState(localStorage.getItem('app-theme') || defaultTheme
     )
 
@@ -15,3 +15,5 @@ export const useTheme = () => {
 
     return {theme, setTheme}
 }
+
+export default useTheme

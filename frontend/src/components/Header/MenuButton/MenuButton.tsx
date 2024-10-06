@@ -1,7 +1,11 @@
 import React from 'react';
 import './MenuButton.scss';
 
-const MenuButton = ({clickButton}) => {
+interface HeaderProps {
+    clickButton: () => void
+}
+
+const MenuButton: React.FC<HeaderProps> = ({clickButton}) => {
     return (
         <button onClick={clickButton} className="menu-button">
             <svg className="menu-button__icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">

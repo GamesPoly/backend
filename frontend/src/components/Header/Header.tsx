@@ -6,7 +6,11 @@ import Search from './Search/Search';
 import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 import MenuButton from './MenuButton/MenuButton';
 
-const Header = ({ openMenu }) => {
+interface HeaderProps {
+    openMenu: () => void
+}
+
+const Header: React.FC<HeaderProps> = ({ openMenu }) => {
     return (
         <header className="header">
             <div className="header__wrapper">

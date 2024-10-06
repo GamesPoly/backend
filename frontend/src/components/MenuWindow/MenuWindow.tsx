@@ -3,7 +3,12 @@ import './MenuWindow.scss';
 import { Link, useLocation } from 'react-router-dom';
 import bgGrid from '@assets/bg-grid.svg'
 
-const MenuWindow = ({ isOpen, closeMenu }) => {
+type MenuWindowProps = {
+    isOpen: boolean, 
+    closeMenu: any
+}
+
+const MenuWindow = ({ isOpen, closeMenu }: MenuWindowProps) => {
     const location = useLocation();
     const [currentPath, setCurrentPath] = useState(location.pathname);
 

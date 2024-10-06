@@ -10,7 +10,6 @@ import PostForm from '../views/PostForm/PostForm'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Registration from '../views/Registration/Registration';
 import MenuWindow from './MenuWindow/MenuWindow';
-import { useTheme } from '../hooks/useTheme';
 
 const App = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

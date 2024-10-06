@@ -37,7 +37,7 @@ const GamesSlider = () => {
   const [selectDot, setSelectedDot] = useState(1);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  const moveToSelected = (index) => {
+  const moveToSelected = (index: number) => {
     setSelectedIdx(index);
   };
 
@@ -58,7 +58,7 @@ const GamesSlider = () => {
   };
 
   
-  const oneStep = (n) => {
+  const oneStep = (n: number) => {
     setSelectedDot(n);
     let lg = Math.floor(images.length / 4) * n
     setSelectedIdx((prevIdx) => (prevIdx + lg > images.length - 1 ? lg - (images.length - 1 - prevIdx): prevIdx + lg));
@@ -67,7 +67,7 @@ const GamesSlider = () => {
       setIsButtonDisabled(false);
     }, 600);
   };
-  const classImage = (idx) => {
+  const classImage = (idx: number) => {
         return idx === selectedIdx ? 'carousel__item carousel__item--selected' : 
             idx === selectedIdx - 1 || (selectedIdx === 0 && idx === images.length - 1) ? 'carousel__item carousel__item--prev' : 
             idx === selectedIdx + 1 || (selectedIdx === images.length - 1 && idx === 0) ? 'carousel__item carousel__item--next' : 
@@ -92,16 +92,16 @@ const GamesSlider = () => {
               </svg>
             </button>
             <div className="carousel__dots">
-              <button disabled={isButtonDisabled} className={selectDot == 1?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 1?() =>oneStep(1):null}>
+              <button disabled={isButtonDisabled} className={selectDot == 1?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 1?() =>oneStep(1):undefined}>
                 <p className="visually-hidden">Один шаг на несколько объектов вперед</p>
               </button>
-              <button disabled={isButtonDisabled} className={selectDot == 2?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 2?() =>oneStep(2):null}>
+              <button disabled={isButtonDisabled} className={selectDot == 2?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 2?() =>oneStep(2):undefined}>
                 <p className="visually-hidden">Один шаг на несколько объектов вперед</p>
               </button>
-              <button disabled={isButtonDisabled} className={selectDot == 3?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 3?() =>oneStep(3):null}>
+              <button disabled={isButtonDisabled} className={selectDot == 3?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 3?() =>oneStep(3):undefined}>
                 <p className="visually-hidden">Один шаг на несколько объектов вперед</p>
               </button>
-              <button disabled={isButtonDisabled} className={selectDot == 4?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 4?() =>oneStep(4):null}>
+              <button disabled={isButtonDisabled} className={selectDot == 4?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 4?() =>oneStep(4):undefined}>
                 <p className="visually-hidden">Один шаг на несколько объектов вперед</p>
               </button>
             </div>

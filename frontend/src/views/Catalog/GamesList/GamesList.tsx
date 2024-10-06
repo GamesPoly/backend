@@ -3,7 +3,18 @@ import { Link } from 'react-router-dom';
 import './GamesList.scss'
 import GamesItem from './GamesItem/GamesItem';
 
-function GamesList({title, games}) {
+type GameType = {
+    name: string,
+    desc: string,
+    cover: any
+}
+
+type GamesListProps = {
+    title:string,
+    games: GameType[]
+}
+
+function GamesList({title, games}: GamesListProps) {
     return ( 
         <section className="games__list">
             <div className="list__head">
