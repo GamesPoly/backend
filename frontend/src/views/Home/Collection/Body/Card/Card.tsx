@@ -5,7 +5,7 @@ import bgCover from '@assets/cover-game3.png'
 import avatar from '@assets/avatar1.png'
 import miniCover from '@assets/cover-game4.png'
 import arrows from '@assets/arrows.svg';
-const CardCollection = ({ version }) => {
+const CardCollection = ({ version }:any) => {
     return (
         <div>
             { version === 'standart' &&
