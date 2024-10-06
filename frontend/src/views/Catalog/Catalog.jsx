@@ -52,11 +52,10 @@ function Catalog() {
 
   return (
     <main className="catalog">
-      <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <SkeletonTheme baseColor="#202020" highlightColor="#fff">
         <AsideSettings />
         <div className="catalog__wrapper">
           {!isLoading ? <AdSlider games={adSliderGames} /> : <SkeletonSlider />}
-
           {!isLoading ? (
             gamesCollections.map((list) => (
               <GamesList

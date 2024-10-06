@@ -79,7 +79,7 @@ export default function TeamDisplay({ devTeamId }) {
         <div className="team-display__members">
           {teamData.members.map((memberId) => (
             <Link
-              to={`/${memberId}`}
+              to={`/users/${memberId}`}
               key={memberId}
               className="team-display__member-link"
             >

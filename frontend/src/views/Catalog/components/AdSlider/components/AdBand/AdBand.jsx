@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AdBand.scss";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 function AdBand({ gameAdObj }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <Link to="#" className="ad-band">
-      {gameAdObj.imageUrl ? (
-        <img
-          src={gameAdObj.imageUrl}
-          alt={gameAdObj.name}
-          className="ad-band__cover"
-        />
-      ) : (
-        <Skeleton className="ad-band__cover" />
-      )}
+    <Link to={`/games/${gameAdObj.id}`} className="ad-band">
+      {!isLoaded && <Skeleton className="ad-band__cover" />}
+      <img
+        src={gameAdObj.imageUrl}
+        alt={gameAdObj.name}
+        onLoad={() => setIsLoaded(true)}
+        style={{ display: isLoaded ? "block" : "none" }}
+        className="ad-band__cover"
+      />
       <div className="ad-band__info">
         <h3 className="ad-band__title">{gameAdObj.name || <Skeleton />}</h3>
         <p className="ad-band__desc">

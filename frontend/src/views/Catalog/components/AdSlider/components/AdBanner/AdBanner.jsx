@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { useState } from "react";
 import "./AdBanner.scss";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
@@ -6,6 +6,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import TeamDisplay from "./components/TeamDisplay/TeamDisplay.jsx";
 import TeamDisplaySkeleton from "../../../skeletons/SkeletonTeamDisplay/SkeletonTeamDisplay.jsx";
 function AdBanner({ gameAdObj }) {
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
     <div className="ad-banner">
       {gameAdObj.imageUrl && (
@@ -15,6 +16,7 @@ function AdBanner({ gameAdObj }) {
           className="ad-banner__image"
         />
       )}
+      
       {gameAdObj.devTeamId ? (
         <TeamDisplay devTeamId={gameAdObj.devTeamId} />
       ) : (
