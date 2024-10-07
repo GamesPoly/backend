@@ -1,7 +1,7 @@
 import React from 'react';
 import './Genre.scss';
-import ListGenres from './ListGenres/ListGenres.jsx';
-import GamesSlider from './GamesSlider/GamesSlider.jsx';
+import ListGenres from './ListGenres/ListGenres';
+import GamesSlider from './GamesSlider/GamesSlider';
 const Genre = () => {
     return (
         <section id="genre" className="genre">

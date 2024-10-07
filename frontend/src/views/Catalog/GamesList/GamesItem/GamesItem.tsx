@@ -1,7 +1,13 @@
 import React from 'react';
 import './GamesItem.scss'
 
-function GamesItem({name, desc, cover}) {
+type GamesItemsProps = {
+    name: string,
+    desc: string,
+    cover: any
+}
+
+function GamesItem({name, desc, cover}: GamesItemsProps) {
     return (  
         <li className="list__card">
             <div className="card__content">
