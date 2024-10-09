@@ -1,10 +1,10 @@
-import React from 'react'
-import './EmailInput.scss'
+import React, { FC } from 'react';
+import './EmailInput.scss';
 
-const EmailInput = () => {
+const EmailInput: FC = () => {
 	return (
 		<div className='email'>
-			<label className='email__label' for='email'>
+			<label className='email__label' htmlFor='email'>
 				Email пользователя
 			</label>
 			<input
@@ -14,7 +14,7 @@ const EmailInput = () => {
 				placeholder='Email пользователя'
 			/>
 		</div>
-	)
-}
+	);
+};
 
-export default EmailInput
+export default EmailInput;

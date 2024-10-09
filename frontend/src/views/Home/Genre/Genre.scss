@@ -33,6 +33,7 @@
 }
 
 .genre__body {
+    margin-top: 40px;
     display: flex;
     @media (min-width: 1440px) {
         gap: 10vw;
@@ -41,5 +42,4 @@
         flex-direction: column;
         gap: 5vh;
     }
-    margin-top: 40px;
 }

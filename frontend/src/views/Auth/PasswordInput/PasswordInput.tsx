@@ -1,10 +1,10 @@
-import React from 'react'
-import './PasswordInput.scss'
+import React, { FC } from 'react';
+import './PasswordInput.scss';
 
-const PasswordInput = () => {
+const PasswordInput: FC = () => {
 	return (
 		<div className='password'>
-			<label className='password_label' for='password'>
+			<label className='password__label' htmlFor='password'>
 				Пароль
 			</label>
 			<input
@@ -14,7 +14,7 @@ const PasswordInput = () => {
 				placeholder='Пароль'
 			/>
 		</div>
-	)
-}
+	);
+};
 
-export default PasswordInput
+export default PasswordInput;

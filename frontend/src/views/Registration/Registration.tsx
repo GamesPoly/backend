@@ -15,7 +15,7 @@ function Registration() {
 					<EmailInput />
 					<PasswordInput />
 					<div className='password'>
-						<label className='password_label' for='password'>
+						<label className='password_label' htmlFor='password'>
 							Подтверждение пароля
 						</label>
 						<input
