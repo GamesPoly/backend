@@ -1,9 +1,21 @@
 import React from 'react';
+import './Button.scss';
+import arrow from '@assets/arrow2.svg';
 
-const Button = () => {
+interface ButtonProps {
+    text?: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ text }) => {
     return (
-        <a className='link'>
-        </a>
+        <button className='styled-button'>
+            <img
+                src={arrow}
+                alt='Arrow'
+                className='styled-button__arrow'
+            />
+            { text }
+        </button>
     );
 };
 
