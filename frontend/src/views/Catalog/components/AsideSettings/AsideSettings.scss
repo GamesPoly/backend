@@ -15,16 +15,26 @@
 .aside-settings__title {
   font-size: 20px;
   font-weight: 400;
+  -webkit-user-drag: none;
+
+  &:hover {
+    cursor: default;
+    -webkit-user-drag: none;
+  }
 }
 
 .aside-settings__link {
+  -webkit-user-drag: none;
   text-decoration: none;
   color: var(--text-detailed);
   font-size: 20px;
   font-weight: 400;
   transition: all 0.15s ease;
+  cursor: pointer;
+
   &:hover {
     opacity: 0.85;
+    -webkit-user-drag: none;
   }
 }
 

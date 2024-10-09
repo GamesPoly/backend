@@ -16,7 +16,7 @@ function AdBanner({ gameAdObj }) {
           className="ad-banner__image"
         />
       )}
-      
+
       {gameAdObj.devTeamId ? (
         <TeamDisplay devTeamId={gameAdObj.devTeamId} />
       ) : (

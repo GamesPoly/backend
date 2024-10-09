@@ -40,8 +40,6 @@ export default function TeamDisplay({ devTeamId }) {
     fetchData();
   }, []); */
 
-
-
   const fetchUserData = (memberId) => {
     switch (memberId) {
       case "1":
@@ -80,22 +78,17 @@ export default function TeamDisplay({ devTeamId }) {
       <div className="team-display__container">
         <div className="team-display__members">
           {teamData.members.map((memberId) => (
-            <>
-              <Link
-                to={`/users/${memberId}`}
-                key={memberId}
-                className="team-display__member-link"
-
-              >
-                <img
-                  src={fetchUserData(memberId).profileImgUrl}
-                  alt={fetchUserData(memberId).name}
-                  className="team-display__member-img"
-               
-                />
-              </Link>
-            </>
-
+            <Link
+              to={`/users/${memberId}`}
+              key={memberId}
+              className="team-display__member-link"
+            >
+              <img
+                src={fetchUserData(memberId).profileImgUrl}
+                alt={fetchUserData(memberId).name}
+                className="team-display__member-img"
+              />
+            </Link>
           ))}
         </div>
         <div className="team-display__right">

@@ -2,103 +2,77 @@ import React from "react";
 import "./AsideSettings.scss";
 import starMini1 from "@assets/decorate-star-mini.svg";
 import starMini2 from "@assets/decorate-star-mini2.svg";
-
-const genres = [
-  {
-    name: "Шутеры",
-    url: "/",
-  },
-  {
-    name: "Карточные",
-    url: "/",
-  },
-  {
-    name: "Стратегии",
-    url: "/",
-  },
-  {
-    name: "Приключения",
-    url: "/",
-  },
-  {
-    name: "Ролевые",
-    url: "/",
-  },
-  {
-    name: "Пазлы",
-    url: "/",
-  },
-  {
-    name: "Спорт",
-    url: "/",
-  },
-  {
-    name: "Экшены",
-    url: "/",
-  },
-];
-const kits = [
-  {
-    name: "Рейтинг",
-    url: "/",
-  },
-  {
-    name: "Просмотры",
-    url: "/",
-  },
-  {
-    name: "Отзывы",
-    url: "/",
-  },
-  {
-    name: "MosPolyJam",
-    url: "/",
-  },
-  {
-    name: "Последние",
-    url: "/",
-  },
-  {
-    name: "Windows",
-    url: "/",
-  },
-  {
-    name: "Web",
-    url: "/",
-  },
-  {
-    name: "Mobile",
-    url: "/",
-  },
-];
+import { useCatalogFilters } from "@/context/CatalogFiltersProvider.jsx";
+import { genres, sets } from "./constants/genresAndSets";
 
 function AsideSettings() {
+  const { selectedGenre, selectedSet, changeSelectedGenre, changeSelectedSet } =
+    useCatalogFilters();
+
   return (
     <aside className="aside-settings">
       <div className="aside-settings__lists">
         <ul className="aside-settings__list">
           <img src={starMini1} alt="" className="aside-settings__icon" />
           <li className="aside-settings__item">
-            <h5 className="aside-settings__title">Жанры</h5>
+            <h5
+              className={
+                selectedGenre === "all"
+                  ? "aside-settings__title"
+                  : "aside-settings__link"
+              }
+              onClick={() => changeSelectedGenre("all")}
+            >
+              Жанры
+            </h5>
           </li>
           {genres.map((item, index) => (
-            <li className="aside-settings__item" key={index}>
-              <a href={item.url} className="aside-settings__link">
+            <li
+              className="aside-settings__item"
+              key={index}
+              onClick={() => changeSelectedGenre(item.filterValue)}
+            >
+              <span
+                className={
+                  selectedGenre === item.filterValue
+                    ? "aside-settings__title"
+                    : "aside-settings__link"
+                }
+              >
                 {item.name}
-              </a>
+              </span>
             </li>
           ))}
         </ul>
         <ul className="aside-settings__list">
           <img src={starMini2} alt="" className="aside-settings__icon" />
           <li className="aside-settings__item">
-            <h5 className="aside-settings__title">Наборы</h5>
+            <h5
+              className={
+                selectedSet === "all"
+                  ? "aside-settings__title"
+                  : "aside-settings__link"
+              }
+              onClick={() => changeSelectedSet("all")}
+            >
+              Наборы
+            </h5>
           </li>
-          {kits.map((item, index) => (
-            <li className="aside-settings__item" key={index}>
-              <a href={item.url} className="aside-settings__link">
+          {sets.map((item, index) => (
+            <li
+              className="aside-settings__item"
+              key={index}
+              onClick={() => changeSelectedSet(item.filterValue)}
+            >
+              <span
+                className={
+                  selectedSet === item.filterValue
+                    ? "aside-settings__title"
+                    : "aside-settings__link"
+                }
+              >
                 {item.name}
-              </a>
+              </span>
             </li>
           ))}
         </ul>
