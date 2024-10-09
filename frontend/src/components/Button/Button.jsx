@@ -1,16 +1,16 @@
-import React from 'react';
-import './Button.scss';
-import arrow from '@assets/arrow2.svg';
+import React from "react";
+import arrow from "@assets/arrow2.svg";
+import styles from "./Button.module.scss";
 
 const Button = ({ text }) => {
     return (
-        <button className='styled-button'>
+        <button className={styles["styled-button"]}>
             <img
                 src={arrow}
-                alt='Arrow'
-                className='styled-button__arrow'
+                alt="Arrow"
+                className={styles["styled-button__arrow"]}
             />
-            { text }
+            {text}
         </button>
     );
 };

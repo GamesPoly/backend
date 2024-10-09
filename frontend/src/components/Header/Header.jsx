@@ -1,37 +1,42 @@
-import React from 'react';
-import './Header.scss'; 
-import { Link } from 'react-router-dom';
-import logo from '@assets/logo.svg';
-import Search from './Search/Search';
-import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
-import MenuButton from './MenuButton/MenuButton';
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "@assets/logo.svg";
+import Search from "./Search/Search";
+import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher";
+import MenuButton from "./MenuButton/MenuButton";
+import styles from "./Header.module.scss";
 
 const Header = ({ openMenu }) => {
     return (
-        <header className="header">
-            <div className="header__wrapper">
-                <ul className="header__details">
-                    <li className="header__item">
-                            <Link to="/" className="header__link">
-                                <img src={logo} alt="PolyGames Logo Image" className="header__logo" />
-                            </Link>
-                            <Search/>
+        <header className={styles.header}>
+            <div className={styles.header__wrapper}>
+                <ul className={styles.header__details}>
+                    <li className={styles.header__item}>
+                        <Link to="/" className={styles.header__link}>
+                            <img
+                                src={logo}
+                                alt="PolyGames Logo Image"
+                                className={styles.header__logo}
+                            />
+                        </Link>
+                        <Search />
                     </li>
-                    <li className="header__item">
-                        <ThemeSwitcher/>
-                        <div className="header__auth">
-                            <Link to="/auth" className="profile__link">
-                                <p className="profile__login">
-                                    Вход
-                                </p>
+                    <li className={styles.header__item}>
+                        <ThemeSwitcher />
+                        <div className={styles.header__auth}>
+                            <Link to="/auth" className={styles.profile__link}>
+                                <p className={styles.profile__login}>Вход</p>
                             </Link>
-                            <Link to="/register" className="profile__link">
-                                <p className="profile__register">
+                            <Link
+                                to="/register"
+                                className={styles.profile__link}
+                            >
+                                <p className={styles.profile__register}>
                                     Регистрация
                                 </p>
-                            </Link> 
+                            </Link>
                         </div>
-                        <MenuButton clickButton={openMenu}/>
+                        <MenuButton clickButton={openMenu} />
                     </li>
                 </ul>
             </div>
