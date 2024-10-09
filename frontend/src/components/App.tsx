@@ -45,24 +45,24 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      {isMenuOpen && <div className="jumbo jumbo--dark"></div>}
-      <BrowserRouter>
-        <div className={isMenuOpen ? "screen screen--left" : "screen"}>
-          <Header openMenu={openMenu} showHeader={showHeader} />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/games" element={<Catalog />} />
-            <Route path="/teams" element={<TeamsPage />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/register" element={<Registration />} />
-            <Route path="/post-form" element={<PostForm />} />
-          </Routes>
-        </div>
-        <MenuWindow isOpen={isMenuOpen} closeMenu={closeMenu} />
-      </BrowserRouter>
-    </div>
+      <div className="app">
+        {isMenuOpen && <div className="jumbo jumbo--dark"></div>}
+        <BrowserRouter>
+          <div className={isMenuOpen ? "screen screen--left" : "screen"}>
+            <Header openMenu={openMenu} showHeader={showHeader} />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/games" element={<Catalog />} />
+              <Route path="/teams" element={<TeamsPage />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/register" element={<Registration />} />
+              <Route path="/post-form" element={<PostForm />} />
+            </Routes>
+          </div>
+          <MenuWindow isOpen={isMenuOpen} closeMenu={closeMenu} />
+        </BrowserRouter>
+      </div>
   );
 };
 
