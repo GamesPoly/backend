@@ -10,6 +10,8 @@ import PostForm from "../views/PostForm/PostForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Registration from "../views/Registration/Registration";
 import MenuWindow from "./MenuWindow/MenuWindow";
+import Footer from "./Footer/Footer";
+import NotFound from "./NotFound/NotFound";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,24 +47,28 @@ const App = () => {
   };
 
   return (
-      <div className="app">
-        {isMenuOpen && <div className="jumbo jumbo--dark"></div>}
-        <BrowserRouter>
-          <div className={isMenuOpen ? "screen screen--left" : "screen"}>
-            <Header openMenu={openMenu} showHeader={showHeader} />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/games" element={<Catalog />} />
-              <Route path="/teams" element={<TeamsPage />} />
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/register" element={<Registration />} />
-              <Route path="/post-form" element={<PostForm />} />
-            </Routes>
-          </div>
-          <MenuWindow isOpen={isMenuOpen} closeMenu={closeMenu} />
-        </BrowserRouter>
-      </div>
+    <div className="app">
+      {isMenuOpen && <div className="jumbo jumbo--dark"></div>}
+      <BrowserRouter>
+        <div className={isMenuOpen ? "screen screen--left" : "screen"}>
+          <Header openMenu={openMenu} showHeader={showHeader} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/games" element={<Catalog />} />
+            <Route path="/teams" element={<TeamsPage />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/register" element={<Registration />} />
+            <Route path="/post-form" element={<PostForm />}/>
+            {/* 404 */}
+            <Route path="*" element={ <NotFound/> }/>
+          </Routes>
+          <Footer />
+        </div>
+
+        <MenuWindow isOpen={isMenuOpen} closeMenu={closeMenu} />
+      </BrowserRouter>
+    </div>
   );
 };
 
