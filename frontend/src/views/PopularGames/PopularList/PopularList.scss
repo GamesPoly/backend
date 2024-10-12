@@ -1,0 +1,19 @@
+@import '@/variables.scss';
+
+.popular-list { 
+    margin-top: 100px;
+}
+
+.popular-list__header {
+
+}
+
+.popular-list__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+
