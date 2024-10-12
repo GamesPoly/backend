@@ -1,127 +1,23 @@
-import React from 'react';
-import './Catalog.scss'
-import AdSlider from './AdSlider/AdSlider';
-import AsideSettings from './AsideSettings/AsideSettings';
-import GamesList from './GamesList/GamesList';
-import cover1 from '@assets/cover-game4.png'
-import cover2 from '@assets/cover-game3.png'
+import React from "react";
+import "./Catalog.scss";
+import AsideSettings from "./components/AsideSettings/AsideSettings";
+import { SkeletonTheme } from "react-loading-skeleton";
+import { CatalogFiltersProvider } from "@context/CatalogFiltersProvider";
+import CatalogGamesContent from "./components/CatalogGamesContent/CatalogGamesContent";
 
 function Catalog() {
-
-    const gamesCollections = [{
-        title: 'Лучшие представители своих жанров',
-        games: [
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            }
-        ]
-    }, 
-    {
-        title: 'Самое популярное в последнее время',
-        games: [
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            }
-        ]
-    }, 
-    {
-        title: 'Специально для тебя',
-        games: [
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            },
-            {
-                name: 'Simulation 23/3',
-                desc: 'Платформер-головоломка с уровнями на логику и смека...',
-                cover: cover1
-            }
-        ]
-    }]
-    return (  
+  return (
+    <CatalogFiltersProvider>
+      <SkeletonTheme baseColor="#202020" highlightColor="#fff">
         <main className="catalog">
-            <AsideSettings />
-            <div className="catalog__wrapper">
-                <AdSlider />
-                {gamesCollections.map((list) => <GamesList title={list.title} games={list.games} key={list.title}/>)}
-            </div>
+          <AsideSettings />
+          <div className="catalog__wrapper">
+            <CatalogGamesContent />
+          </div>
         </main>
-    );
+      </SkeletonTheme>
+    </CatalogFiltersProvider>
+  );
 }
 
 export default Catalog;

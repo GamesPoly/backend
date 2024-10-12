@@ -7,10 +7,13 @@ import Catalog from "../views/Catalog/Catalog";
 import TeamsPage from "../views/TeamsPage/TeamsPage";
 import Auth from "../views/Auth/Auth";
 import PostForm from "../views/PostForm/PostForm";
+import PopularGames from "../views/PopularGames/PopularGames";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Registration from "../views/Registration/Registration";
 import MenuWindow from "./MenuWindow/MenuWindow";
-import PopularGames from "../views/PopularGames/PopularGames";
+import Footer from "./Footer/Footer";
+import NotFound from "./NotFound/NotFound";
+
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,7 +63,10 @@ const App = () => {
               <Route path="/register" element={<Registration />} />
               <Route path="/post-form" element={<PostForm />} />
               <Route path="/popular-games" element={<PopularGames />} />
+              {/* 404 */}
+              <Route path="*" element={ <NotFound/> }/>
             </Routes>
+            <Footer />
           </div>
           <MenuWindow isOpen={isMenuOpen} closeMenu={closeMenu} />
         </BrowserRouter>
