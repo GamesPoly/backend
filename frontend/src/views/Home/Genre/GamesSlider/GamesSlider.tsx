@@ -18,6 +18,7 @@ import cover15 from '@assets/cover-game15.png'
 
 const GamesSlider = () => {
     const images = [];
+    const dots = [];
 
     for (let i = 1; i <= 15; i++) {
         const randomRating = (Math.random() * (5 - 1) + 1).toFixed(1); // Генерация случайного рейтинга от 1 до 5
@@ -31,18 +32,21 @@ const GamesSlider = () => {
         };
 
         images.push(image);
+        dots.push(i)
     }
 
     const [selectedIdx, setSelectedIdx] = useState(0);
     const [selectDot, setSelectedDot] = useState(1);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-    const moveToSelected = (index: number) => {
-        setSelectedIdx(index);
+    const setItem = (idx: number) => {
+        setSelectedIdx(idx);
+        setSelectedDot(idx + 1);
     };
 
     const prevSlide = () => {
         setSelectedIdx((prevIdx) => (prevIdx === 0 ? images.length - 1 : prevIdx - 1));
+        setSelectedDot((prevDot) => (prevDot === 1 ? images.length: prevDot - 1));
         setIsButtonDisabled(true);
         setTimeout(() => {
             setIsButtonDisabled(false);
@@ -51,6 +55,7 @@ const GamesSlider = () => {
 
     const nextSlide = () => {
         setSelectedIdx((prevIdx) => (prevIdx === images.length - 1 ? 0 : prevIdx + 1));
+        setSelectedDot((prevDot) => (prevDot === images.length ? 1: prevDot + 1))
         setIsButtonDisabled(true);
         setTimeout(() => {
             setIsButtonDisabled(false);
@@ -60,12 +65,11 @@ const GamesSlider = () => {
 
     const oneStep = (n: number) => {
         setSelectedDot(n);
-        let lg = Math.floor(images.length / 4) * n
-        setSelectedIdx((prevIdx) => (prevIdx + lg > images.length - 1 ? lg - (images.length - 1 - prevIdx): prevIdx + lg));
+        setSelectedIdx(n - 1);
         setIsButtonDisabled(true);
         setTimeout(() => {
-            setIsButtonDisabled(false);
-        }, 600);
+          setIsButtonDisabled(false);
+        }, 500);
     };
     const classImage = (idx: number) => {
         return idx === selectedIdx ? 'carousel__item carousel__item--selected' :
@@ -92,7 +96,14 @@ const GamesSlider = () => {
                             </svg>
                         </button>
                         <div className="carousel__dots">
-                            <button disabled={isButtonDisabled} className={selectDot == 1?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 1?() =>oneStep(1):undefined}>
+                            {
+                                dots.map(dot => 
+                                <button key={dot} disabled={isButtonDisabled} className={selectDot == dot?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != dot ? () => oneStep(dot) : undefined}>
+                                    <p className="visually-hidden">Один шаг на несколько объектов вперед</p>
+                                </button>
+                                )
+                            }
+                            {/* <button disabled={isButtonDisabled} className={selectDot == 1?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 1?() =>oneStep(1):undefined}>
                                 <p className="visually-hidden">Один шаг на несколько объектов вперед</p>
                             </button>
                             <button disabled={isButtonDisabled} className={selectDot == 2?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 2?() =>oneStep(2):undefined}>
@@ -103,7 +114,7 @@ const GamesSlider = () => {
                             </button>
                             <button disabled={isButtonDisabled} className={selectDot == 4?"carousel__button carousel__button--active":"carousel__button carousel__button--circle"} id="step1" onClick={selectDot != 4?() =>oneStep(4):undefined}>
                                 <p className="visually-hidden">Один шаг на несколько объектов вперед</p>
-                            </button>
+                            </button> */}
                         </div>
                         <button disabled={isButtonDisabled} className="carousel__button" id="next" onClick={nextSlide}>
                             <p className="visually-hidden">Следующая игра</p>
@@ -116,7 +127,7 @@ const GamesSlider = () => {
             </div>
             <ul className="carousel__list">
                 {images.map((image, idx) => (
-                    <div key={idx} className={classImage(idx)}>
+                    <div key={idx} className={classImage(idx)} onClick={() => setItem(idx)}>
                         <img className="carousel__image" src={image.url} alt={`Slide ${idx + 1}`} />
                     </div>
                 ))}
