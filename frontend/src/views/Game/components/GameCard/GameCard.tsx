@@ -1,5 +1,6 @@
 import React from "react";
 import GameSlider from "../GamesSlider/GamesSlider";
+import Preview from "../Preview/Preview";
 
 type GameCardProps = {
     id: string;
@@ -7,9 +8,11 @@ type GameCardProps = {
 
 const GameCard: React.FC<GameCardProps> = ({ id }) => {
   return (
-    <div>
-      <h1>Astrea</h1>
+    <div className="card">
+      <h1 className="card__header">Astrea</h1>
+      <div className="card__block">
       <GameSlider/>
+      <Preview/></div>
     </div>
   );
 };

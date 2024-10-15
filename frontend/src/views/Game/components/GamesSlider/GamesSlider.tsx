@@ -22,7 +22,7 @@ const GameSlider: React.FC = () => {
 
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   return (
-    <div style={{position: 'relative', maxWidth: '750px'}}>
+    <div className='swiper-wrap'>
     <Swiper
         spaceBetween={10}
         pagination={{
@@ -31,7 +31,7 @@ const GameSlider: React.FC = () => {
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Thumbs,
           
-      Pagination
+      Pagination, Navigation
     ]}
         className="mySwiper2"
       >
@@ -47,6 +47,9 @@ const GameSlider: React.FC = () => {
         <SwiperSlide>
           <img src={slide4} />
         </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide3} />
+        </SwiperSlide>
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -54,13 +57,7 @@ const GameSlider: React.FC = () => {
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
-        pagination={{
-          el: '.swiper-pagination',
-          type: 'progressbar',
-          enabled: false,
-          lockClass: "lala"
-        }}
-        modules={[FreeMode, Thumbs, Pagination]}
+        modules={[FreeMode, Thumbs, Navigation]}
         className="mySwiper"
       >
          <SwiperSlide>
@@ -74,6 +71,9 @@ const GameSlider: React.FC = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src={slide4} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide3} />
         </SwiperSlide>
       </Swiper>
     </div>
