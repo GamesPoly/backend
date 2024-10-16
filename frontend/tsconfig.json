@@ -12,7 +12,9 @@
     "paths": {
       "@assets/*": ["assets/*"],
       "@hooks/*": ["hooks/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@context/*": ["context/*"],
+      "@types/*": ["types/*"]
     }
   },
   "include": ["src/**/*", "src/custom.d.ts"],
