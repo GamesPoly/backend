@@ -1,7 +1,20 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './EmailInput.scss';
 
-const EmailInput: FC = () => {
+interface EmailInputProps {
+	onEmailChange: (email: string) => void
+}
+
+const EmailInput: FC<EmailInputProps> = ({ onEmailChange }) => {
+	const [email, setEmail] = useState('')
+
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const newEmail = e.target.value
+		setEmail(newEmail)
+		onEmailChange(newEmail)
+	}
+
+
 	return (
 		<div className='email'>
 			<label className='email__label' htmlFor='email'>
@@ -12,6 +25,8 @@ const EmailInput: FC = () => {
 				name='email'
 				className='email__input'
 				placeholder='Email пользователя'
+				value={email}
+				onChange={handleInputChange}
 			/>
 		</div>
 	);
