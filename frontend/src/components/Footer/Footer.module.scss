@@ -1,7 +1,5 @@
 .footer {
-
 	&__wrapper {
-
 		background-color: var(--background-color);
 		max-width: 1440px;
 		margin: 0 auto;
@@ -9,25 +7,22 @@
 		padding: 68px 50px;
 		padding-bottom: 48px;
 	}
-
 	&__logo {
 		margin-bottom: 0;
 	}
 	&__nav {
-		
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		
-	}
 
+	}
 	&__links {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		list-style: none;
 		row-gap: 0.33em;
 	}
-
 	&__link {
 		font-size: 1.25rem;
 		font-weight: 400;
@@ -36,25 +31,21 @@
 		display: flex;
 		align-items: center;
 		transition: color 0.5s ease-out;
-
 		&:hover {
 			color: rgb(201, 201, 199);
 		}
 	}
 
-}
-
-
-.footer__socials {
-	display: flex;
-	align-items: center;
-	gap: 1em;
-	list-style: none;
-	padding: 0;
-	justify-content: space-between;
-
-	& img {
-		width: 50px;
-		aspect-ratio: 1/1;
+	.footer__socials {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		list-style: none;
+		padding: 0;
+		justify-content: space-between;
+		& img {
+			width: 50px;
+			aspect-ratio: 1/1;
+		}
 	}
 }
