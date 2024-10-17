@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Game.scss";
+import "../Reviews.scss"
 import star from "@assets/star.svg";
 
 export type ReviewProps = {

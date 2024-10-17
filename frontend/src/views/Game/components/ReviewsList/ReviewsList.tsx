@@ -1,9 +1,8 @@
 import React from "react";
-import "../../Game.scss";
-import Review from "./Review";
-import '../Reviews/Reviews.scss'
+import './Reviews.scss'
 import avatar1 from "@assets/avatar1.svg"
 import avatar2 from "@assets/avatar2.svg"
+import Review from "./Review/Review";
 
 const reviews = [
   {
@@ -36,7 +35,7 @@ const reviews = [
   }
 ];
 
-const Reviews: React.FC = () => {
+const ReviewsList: React.FC = () => {
   return (
     <div className="review">
       <h2 className="review__title">Отзывы</h2>
@@ -51,4 +50,4 @@ const Reviews: React.FC = () => {
   );
 };
 
-export default Reviews;
+export default ReviewsList;

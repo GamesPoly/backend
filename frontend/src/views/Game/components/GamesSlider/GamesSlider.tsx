@@ -1,12 +1,10 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
+import React, {useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import slide1 from '@assets/slider-picture-1.png'
 import slide2 from '@assets/slider-picture-2.png'
 import slide3 from '@assets/slider-picture-3.png'
 import slide4 from '@assets/slider-picture-4.png'
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -14,15 +12,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
 import '../GamesSlider/GamesSlider.scss'
 
-// import required modules
 import { FreeMode, Navigation, Thumbs, Pagination } from 'swiper/modules';
-import { relative } from 'path';
 
 const GameSlider: React.FC = () => {
 
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   return (
-    <div className='swiper-wrap'>
+    <div className='slider-wrap'>
     <Swiper
         spaceBetween={10}
         pagination={{
@@ -33,22 +29,22 @@ const GameSlider: React.FC = () => {
           
       Pagination, Navigation
     ]}
-        className="mySwiper2"
+        className="preview-slider"
       >
         <SwiperSlide>
           <img src={slide1} />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={slide2} />
+        <img src={slide1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide3} />
+          <img src={slide1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide4} />
+          <img src={slide1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide3} />
+          <img src={slide1} />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -58,22 +54,22 @@ const GameSlider: React.FC = () => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Thumbs, Navigation]}
-        className="mySwiper"
+        className="slider"
       >
          <SwiperSlide>
           <img src={slide1} />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={slide2} />
+        <img src={slide1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide3} />
+          <img src={slide1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide4} />
+          <img src={slide1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide3} />
+          <img src={slide1} />
         </SwiperSlide>
       </Swiper>
     </div>
