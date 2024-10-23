@@ -62,7 +62,7 @@
     height: 12px;
     background-color: var(--background-extra);
     border-radius: 12px;
-    
+    transition: all 1s;
   }
   &--active {
     cursor: default;
