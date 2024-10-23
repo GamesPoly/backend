@@ -33,13 +33,11 @@
 }
 
 .genre__body {
+    margin-top: 40px;
     display: flex;
-    @media (min-width: 1440px) {
-        gap: 10vw;
-    }
+    gap: 10vw;
     @media (max-width: 1439px) {
         flex-direction: column;
         gap: 5vh;
     }
-    margin-top: 40px;
 }

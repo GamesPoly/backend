@@ -1,0 +1,17 @@
+@import '@/variables.scss';
+
+.genres-list { 
+    margin-bottom: 100px;
+    transition: all 0.3s ease;
+}
+ 
+.genres-list__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+
+

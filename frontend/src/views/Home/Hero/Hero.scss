@@ -29,10 +29,10 @@
 
 .navigate__link {
     color: var(--text-secondary);
+    line-height: 1;
     text-decoration: none;
     transition: .3s;
     @include adaptiv-font(20, 14);
-    line-height: 1;
     &--active {
         color: var(--text-primary);
     }
@@ -62,17 +62,17 @@
 }
 
 .last-update__title {
+    transition: all 1.3s ease;
     color: var(--text-primary);
     font-weight: 400;
     @include adaptiv-font(22, 16);
-    transition: all 1.3s ease;
 }
 
 .last-update__desc {
-    color: var(--text-detailed);
-    @include adaptiv-font(15, 12);
     margin: 8px 0 0;
     transition: all 1.3s ease;
+    color: var(--text-detailed);
+    @include adaptiv-font(15, 12);
 }
 
 .last-update__link {
@@ -83,15 +83,15 @@
 }
 
 .last-update__open {
-    color: var(--text-primary);
-    @include adaptiv-font(20, 16);
     transition: all 0.15s ease;
+    transition: all 1.3s ease;
     margin: 0;
     padding: 0;
+    color: var(--text-primary);
+    @include adaptiv-font(20, 16);
     &:hover {
         opacity: 0.85;
     }
-    transition: all 1.3s ease;
 }
 
 .last-update__circle {
@@ -121,12 +121,12 @@
 }
 
 .hero__title {
-    @include adaptiv-font(92, 36);
     font-weight: 500;
-    
     color: var(--text-primary);
     white-space: nowrap;
+    transition: all 1.3s;
     line-height: 1;
+    @include adaptiv-font(92, 36);
     &--highlighted {
         color: var(--accent-color);
     }&:nth-child(1){
@@ -138,7 +138,6 @@
     &:nth-child(3){
         margin-left: 60px;
     }
-    transition: all 1.3s;
 }
 
 .hero__details {
@@ -151,8 +150,8 @@
 
 .hero__desc {
     max-width: 385px;
-    @include adaptiv-font(22, 16);
     line-height: 25px;
+    @include adaptiv-font(22, 16);
     &--highlighted {
         color: var(--primary-color);
     }
@@ -175,6 +174,7 @@
     border-radius: 30px;
     overflow: hidden;
     transition: all 1.3s ease;
+    z-index: -2;
 
     &:nth-child(5) {
         display: flex;
@@ -195,7 +195,6 @@
         grid-column: 5 / 6;
         background-color: #0B0B0B;
     }
-    z-index: -2;
 }
 .hero__ad {
     display: flex;
@@ -259,10 +258,10 @@
 
 .hero__about {
     text-align: justify;
-    @include adaptiv-font(18, 14);
     line-height: 26px;
     max-width: 224px;
     margin: 38px auto 24px;
+    @include adaptiv-font(18, 14);
     &--highlighted {
         color: var(--primary-color);
     }
