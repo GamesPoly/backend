@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./GamesList.scss";
+import styles from "./GamesList.module.scss";
 import GamesItem from "./GamesItem/GamesItem";
 import { useCatalogFilters } from "@context/CatalogFiltersProvider";
 import type { GamesListData} from '../../types/index'
@@ -10,15 +10,15 @@ function GamesList({ title, games }:GamesListProps) {
   const { selectedGenre, selectedSet } = useCatalogFilters();
 
   return (
-    <section className="games__list">
+    <section className={styles["games__list"]}>
       {games.length > 0 ? ( /* Если есть игры по запросу */
         <>
           {title ? (
-            <div className="list__head">
-              <h3 className="games__header">{title}</h3>
+            <div className={styles["list__head"]}>
+              <h3 className={styles["games__header"]}>{title}</h3>
               <Link
                 to="/"
-                className="games__show"
+                className={styles["games__show"]}
                 style={{
                   display: selectedGenre === selectedSet ? "block" : "none",
                 }} /* Выполнятья только в одном случает: оба === "all" */
@@ -27,7 +27,7 @@ function GamesList({ title, games }:GamesListProps) {
               </Link>
             </div>
           ) : null}
-          <ul className="list__body">
+          <ul className={styles["list__body"]}>
             {games.map((game) => (
               <GamesItem
                 name={game.name}

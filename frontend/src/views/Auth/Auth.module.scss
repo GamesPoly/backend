@@ -1,5 +1,5 @@
 @import "../../variables.scss";
-.registration__form {
+.auth__form {
   text-align: center;
   background-color: var(--background-detailed);
   width: 900px;
@@ -8,14 +8,14 @@
   padding: 80px 0px 10px;
 }
 
-.registration__btns {
+.auth__forget__btns {
   margin: 40px auto;
   margin-left: 12%;
   display: flex;
   align-items: center;
 }
 
-.registration__btn {
+.auth__btn {
   background-color: var(--primary-color);
   color: #ffffff;
   display: flex;
@@ -45,7 +45,7 @@
   }
 }
 
-.other__registration__btns {
+.other__auth__btns {
   padding: 30px 100px;
   text-align: left;
 }

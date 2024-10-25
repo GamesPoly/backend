@@ -1,5 +1,5 @@
 import React from "react";
-import "./AdBanner.scss";
+import styles from "./AdBanner.module.scss";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -13,12 +13,12 @@ type AdBannerProps ={
 const AdBanner: React.FC<AdBannerProps> = ({ gameAdObj }) => {
 
   return (
-    <div className="ad-banner">
+    <div className={styles["ad-banner"]}>
       {gameAdObj.imageUrl && (
         <img
           src={gameAdObj.imageUrl}
           alt={gameAdObj.name}
-          className="ad-banner__image"
+          className={styles["ad-banner__image"]}
         />
       )}
 
@@ -28,40 +28,40 @@ const AdBanner: React.FC<AdBannerProps> = ({ gameAdObj }) => {
         <TeamDisplaySkeleton />
       )}
 
-      <div className="ad-banner__info">
-        <h2 className="ad-banner__title">
+      <div className={styles["ad-banner__info"]}>
+        <h2 className={styles["ad-banner__title"]}>
           {gameAdObj.name || <Skeleton width={"120px"} />}
         </h2>
-        <p className="ad-banner__desc">
+        <p className={styles["ad-banner__desc"]}>
           {gameAdObj.desc || <Skeleton count={4} />}
         </p>
-        <div className="ad-banner__tags">
-          <p className="ad-banner__ganre">{gameAdObj.ganre || <Skeleton />}</p>
+        <div className={styles["ad-banner__tags"]}>
+          <p className={styles["ad-banner__ganre"]}>{gameAdObj.ganre || <Skeleton />}</p>
           {gameAdObj.tags ? (
             gameAdObj.tags.map((item, index) => (
-              <p key={index} className="ad-banner__tag">
+              <p key={index} className={styles["ad-banner__tag"]}>
                 #{item}
               </p>
             ))
           ) : (
             <>
-              <p className="ad-banner__tag">
+              <p className={styles["ad-banner__tag"]}>
                 <Skeleton width={"110px"} />
               </p>
-              <p className="ad-banner__tag">
+              <p className={styles["ad-banner__tag"]}>
                 <Skeleton width={"110px"} />
               </p>
-              <p className="ad-banner__tag">
+              <p className={styles["ad-banner__tag"]}>
                 <Skeleton width={"110px"} />
               </p>
             </>
           )}
         </div>
         {gameAdObj.id ? (
-          <Link to={`${gameAdObj.id}`} className="ad-banner__link">
-            <p className="ad-banner__more">Подробнее</p>
+          <Link to={`${gameAdObj.id}`} className={styles["ad-banner__link"]}>
+            <p className={styles["ad-banner__more"]}>Подробнее</p>
             <svg
-              className="ad-banner__arrow"
+              className={styles["ad-banner__arrow"]}
               xmlns="http://www.w3.org/2000/svg"
               width="50"
               height="50"
@@ -76,7 +76,7 @@ const AdBanner: React.FC<AdBannerProps> = ({ gameAdObj }) => {
             </svg>
           </Link>
         ) : (
-          <Skeleton className="ad-banner__link" height={"50px"} />
+          <Skeleton className={styles["ad-banner__link"]} height={"50px"} />
         )}
       </div>
     </div>

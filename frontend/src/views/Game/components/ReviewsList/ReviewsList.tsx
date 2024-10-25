@@ -1,5 +1,5 @@
 import React from "react";
-import './Reviews.scss'
+import styles from './Reviews.module.scss'
 import avatar1 from "@assets/avatar1.svg"
 import avatar2 from "@assets/avatar2.svg"
 import Review from "./Review/Review";
@@ -37,9 +37,9 @@ const reviews = [
 
 const ReviewsList: React.FC = () => {
   return (
-    <div className="review">
-      <h2 className="review__title">Отзывы</h2>
-      <div className="review__grid">
+    <div className={styles["review"]}>
+      <h2 className={styles["review__title"]}>Отзывы</h2>
+      <div className={styles["review__grid"]}>
         {
             reviews.map((review)=>
              <Review id={review.id} author={review.author} link={review.link} stars={review.stars} text={review.text}/>

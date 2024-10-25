@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import "./PasswordInput.scss";
+import styles from "./PasswordInput.module.scss";
 
 interface PasswordInputProps {
   onPasswordChange: (password: string) => void;
@@ -15,14 +15,14 @@ const PasswordInput: FC<PasswordInputProps> = ({ onPasswordChange }) => {
   };
 
   return (
-    <div className="password">
-      <label className="password__label" htmlFor="password">
+    <div className={styles["password"]}>
+      <label className={styles["password__label"]} htmlFor="password">
         Пароль
       </label>
       <input
         type="password"
         name="password"
-        className="password__input"
+        className={styles["password__input"]}
         placeholder="Пароль"
 		value={password}
 		onChange={hanleInputChange}
