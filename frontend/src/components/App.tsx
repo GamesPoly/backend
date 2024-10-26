@@ -16,63 +16,82 @@ import NotFound from "./NotFound/NotFound";
 import Game from "../views/Game/Game";
 
 const App = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [showHeader, setShowHeader] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
+    const handleScroll = () => {
+        const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY) {
-      setLastScrollY(currentScrollY);
-      setShowHeader(false);
-    } else {
-      setLastScrollY(currentScrollY);
-      setShowHeader(true);
-    }
-  };
-
-  useEffect(() => {
-    setLastScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+        if (currentScrollY > lastScrollY) {
+            setLastScrollY(currentScrollY);
+            setShowHeader(false);
+        } else {
+            setLastScrollY(currentScrollY);
+            setShowHeader(true);
+        }
     };
-  }, [lastScrollY]);
 
-  const openMenu = () => {
-    setIsMenuOpen(true);
-  };
+    const handlePointerMove = (event: PointerEvent) => {
+        setShowHeader((currentShowHeader) => {
+            if (currentShowHeader || event.clientY < 100) {
+                return true;
+            }
+            return false;
+        });
+    };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+    useEffect(() => {
+        setLastScrollY(window.scrollY);
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [lastScrollY]);
 
-  return (
-    <div className="app">
-      {isMenuOpen && <div className="jumbo jumbo--dark"></div>}
-      <BrowserRouter>
-        <div className={isMenuOpen ? "screen screen--left" : "screen"}>
-          <Header openMenu={openMenu} showHeader={showHeader} />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/games" element={<Catalog />} />
-            <Route path="/teams" element={<TeamsPage />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/register" element={<Registration />} />
-            <Route path="/post-form" element={<PostForm />} />
-            <Route path="/popular-games" element={<PopularGames />} />
-            <Route path="/games/:id" element={<Game />} />
-            {/* 404 */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
+    useEffect(() => {
+        window.addEventListener("pointermove", handlePointerMove);
+        return () => {
+            window.removeEventListener("pointermove", handlePointerMove);
+        };
+    }, []);
+
+    const openMenu = () => {
+        setIsMenuOpen(true);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    return (
+        <div className="app">
+            {isMenuOpen && <div className="jumbo jumbo--dark"></div>}
+            <BrowserRouter>
+                <div className={isMenuOpen ? "screen screen--left" : "screen"}>
+                    <Header openMenu={openMenu} showHeader={showHeader} />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/games" element={<Catalog />} />
+                        <Route path="/teams" element={<TeamsPage />} />
+                        <Route path="/auth" element={<Auth />} />
+                        <Route path="/register" element={<Registration />} />
+                        <Route path="/post-form" element={<PostForm />} />
+                        <Route
+                            path="/popular-games"
+                            element={<PopularGames />}
+                        />
+                        <Route path="/games/:id" element={<Game />} />
+                        {/* 404 */}
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                    <Footer />
+                </div>
+                <MenuWindow isOpen={isMenuOpen} closeMenu={closeMenu} />
+            </BrowserRouter>
         </div>
-        <MenuWindow isOpen={isMenuOpen} closeMenu={closeMenu} />
-      </BrowserRouter>
-    </div>
-  );
+    );
 };
 
 export default App;

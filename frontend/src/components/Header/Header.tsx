@@ -12,7 +12,6 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ openMenu, showHeader }) => {
-    console.log(styles);
     return (
         <header
             className={`${styles.header} ${
