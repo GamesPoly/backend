@@ -8,6 +8,13 @@
     background-color: var(--background-detailed);
     box-sizing: border-box;
     margin-top: 40px;
+    
+    &--small { 
+        width: clamp(100px , 25vw ,200px);
+    }
+    &--big {
+        width: clamp(100px , 25vw ,300px);
+    }
 }
 
 .games-list__card-cover {

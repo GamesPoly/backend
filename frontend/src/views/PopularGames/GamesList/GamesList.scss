@@ -7,14 +7,27 @@
 
 
 .games-list__body {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
     justify-content: space-between;
+    justify-items: center;
     align-items: center;
     list-style: none;
-    &--small {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
-    }
-    &--big {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-    }
+}
+
+.games-list__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.games-list__show-button {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: $white-200;
 }

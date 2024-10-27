@@ -5,14 +5,26 @@
 .game-banner-item {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 100%;
-    max-height: 390px;
+   
 }
 
+.game-banner-item__image-container {
+    display: flex;
+    max-width: 720px;
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
 
+.game-banner-item__image {
+    max-height: 500px;
+    aspect-ratio: auto;
+}
 
 .game-banner-item__info {
     display: flex;
@@ -20,12 +32,19 @@
     justify-content: space-between;
     background-color: var(--background-secondary);
     max-width: 480px;
-    width: 100%;
-    min-height: 390px;
+    width: 100%;  
+    gap: 2.5rem;
     border-radius: 8px;
     padding: 30px 20px 12px;
     box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.50);
     box-sizing: border-box;
+}
+
+
+.game-banner-item__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .game-banner-item__title {
@@ -33,8 +52,32 @@
     padding: 0;
 }
 
+.game-banner-item__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: end;
+}
+
+.game-banner-item__points {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+}
+
+.game-banner-item__place {
+    font-size: 0.875rem;
+    & span {
+        color: var(--primary-color);
+    } 
+}
+
+.game-banner-item__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
 .game-banner-item__desc {
-    
     color: var(--text-primary);
     padding: 0;
     font-size: 1.5rem;
@@ -73,6 +116,8 @@
 }
 
 .game-banner-item__arrow {
+    width: 50px;
+    height: 50px;
     &:hover {
         & path {
             fill: var(--primary-color);
@@ -97,5 +142,52 @@
                 fill: var(--primary-color);
             }
         }
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .game-banner-item {
+        flex-direction: column;
+        max-height: 401px;
+        height: 100%;
+        gap: 10px;
+    }
+
+    .game-banner-item__image-container {
+        max-height: 167px;
+        
+    }
+    .game-banner-item__image {
+        max-width: 293px;
+    }
+    .game-banner-item__info {
+        max-height: 200px;
+        gap: 1.25rem;
+    }
+    .game-banner-item__title {
+        font-size: 1.25rem;
+    }
+    .game-banner-item__points {
+
+    }
+    .game-banner-item__place {
+
+    }
+    .game-banner-item__body {
+        gap: 0.625rem;
+    }
+    .game-banner-item__desc {
+        font-size: 0.75rem;
+    }
+    .game-banner-item__tags p {
+        font-size: 0.5rem;
+    }
+    .game-banner-item__more {
+        font-size: 0.75rem;
+    }
+    .game-banner-item__arrow {
+        width: 25px;
+        height: 25px;
     }
 }

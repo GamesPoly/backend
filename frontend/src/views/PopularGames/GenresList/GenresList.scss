@@ -6,8 +6,10 @@
 }
  
 .genres-list__body {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
     justify-content: space-between;
     align-items: center;
     list-style: none;
@@ -15,3 +17,19 @@
 }
 
 
+.genres-list__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.genres-list__title {
+
+}
+
+.genres-list__show-button {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: $white-200;
+}

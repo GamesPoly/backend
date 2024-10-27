@@ -6,6 +6,7 @@
     align-items: center;
     box-sizing: border-box;
     margin-top: 40px;
+    width: clamp(100px , 25vw ,200px);
 }
 
 .genres-list__card-cover {

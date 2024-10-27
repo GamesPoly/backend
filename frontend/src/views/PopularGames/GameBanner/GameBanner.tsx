@@ -10,7 +10,9 @@ function GameBanner () {
     const games = [
         {
             id: 1,
-            image: banner, 
+            image: banner,
+            points: 4533, 
+            place: 1,
             name: 'OMORI',
             desc: 'Исследуйте странный мир, полный ярких друзей и врагов. Когда придет время, выбранный вами путь определит вашу судьбу... и, возможно, судьбу других людей.',
             tags: ['Симулятор','MosPolyJam2023'],
@@ -19,6 +21,8 @@ function GameBanner () {
         {
             id: 2,
             image: cover1, 
+            points: 3533,
+            place: 2,
             name: 'Neo_Cat',
             desc: 'чайте новые механики, чтобы устранять баги эффективнее. Вперёд НЕО КОТ, я в тебя верю!',
             tags: ['Симуляция','MosPolyJam2023'],
@@ -26,7 +30,9 @@ function GameBanner () {
         },
         {
             id: 3,
-            image: banner, 
+            image: banner,
+            points: 3533,
+            place: 3, 
             name: 'Neo_Cat',
             desc: 'чайте новыеasdasdasdasdasdasdas механики, чтобы устранять баги эффективнее. Вперёд НЕО КОТ, я в тебя верю!',
             tags: ['Симуляция','MosPolyJam2023'],
@@ -52,7 +58,7 @@ function GameBanner () {
     
     return (
         <section className="game-banner">
-            <div className="game-banner__main" style={{ backgroundColor: games[currentIndex].bgColor ,backgroundImage: `url(${games[currentIndex].image})` }}>
+            <div className="game-banner__main" style={{ backgroundColor: games[currentIndex].bgColor }}>
                 <button className="game-banner__prev" onClick={goToPrevSlide}>
                 <svg width="23" height="15" viewBox="0 0 23 15" xmlns="http://www.w3.org/2000/svg" fill="currentcolor">
                     <path d="M1.03126 6.79289C0.640736 7.18342 0.640736 7.81658 1.03126 8.20711L7.39522 14.5711C7.78575 14.9616 8.41891 14.9616 8.80943 14.5711C9.19996 14.1805 9.19996 13.5474 8.80943 13.1569L3.15258 7.5L8.80943 1.84315C9.19996 1.45262 9.19996 0.819457 8.80943 0.428932C8.41891 0.0384078 7.78575 0.0384078 7.39522 0.428932L1.03126 6.79289ZM22.0645 6.5L1.73837 6.5V8.5L22.0645 8.5V6.5Z"/>

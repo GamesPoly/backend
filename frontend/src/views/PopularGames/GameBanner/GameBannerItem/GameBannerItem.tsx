@@ -5,6 +5,8 @@ import "./GameBannerItem.scss"
 type GameBannerItemProps = {
     game: {
         image: string;
+        points: number;
+        place: number;
         name: string;
         desc: string;
         tags: string[];
@@ -15,23 +17,30 @@ type GameBannerItemProps = {
 function GameBannerItem( {game}: GameBannerItemProps) {
     return ( 
         <div className="game-banner-item">
-            <div className="game-banner-item__image">
+            <div className="game-banner-item__image-container">
+                <img className="game-banner-item__image" src={game.image} alt="Фото игры" />
             </div>
             <div className="game-banner-item__info">
-                <h2 className="game-banner-item__title">{game.name}</h2>
-                <p className="game-banner-item__desc">{game.desc}</p>
-                <div className="game-banner-item__tags">
-                    {game.tags.map((item, index) => (
-                        <p key={index}>#{item}</p>
-                     ))}
+                <div className="game-banner-item__header">
+                    <h2 className="game-banner-item__title">{game.name}</h2>
+                    <div className="game-banner-item__stats">
+                        <p className="game-banner-item__points">{game.points} очков</p>
+                        <p className="game-banner-item__place"><span>{game.place} место</span> MospolyJam 2023</p>
+                    </div>
+                </div>
+                <div className="game-banner-item__body">
+                    <p className="game-banner-item__desc">{game.desc}</p>
+                    <div className="game-banner-item__tags">
+                        {game.tags.map((item, index) => (
+                            <p key={index}>#{item}</p>
+                        ))}
+                    </div>
                 </div>
                 <Link to="/populargames" className="game-banner-item__link">
                 <p className="game-banner-item__more">Подробнее</p>
                 <svg
                     className="game-banner-item__arrow"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="50"
-                    height="50"
                     viewBox="0 0 50 50"
                     fill="none"
                 >
