@@ -1,5 +1,5 @@
 import React from 'react';
-import './GamesList.scss'
+import styles from './GamesList.module.scss'
 import GamesItem from './GamesItem/GamesItem';
 
 type Popular = {
@@ -19,8 +19,8 @@ function GamesList({title, games, size}: GamesListProps) {
     const gamesListBody = `games-list__body games-list__body--${size}`;
 
     return ( 
-        <section className="games-list">
-            <h3 className="games-list__header">{title}</h3>
+        <section className={styles["games-list"]}>
+            <h3 className={styles["games-list__header"]}>{title}</h3>
             <ul className={gamesListBody}>
                 {games.map((game) => <GamesItem name={game.name} desc={game.desc} cover={game.cover} key={game.name}/>)}
             </ul>

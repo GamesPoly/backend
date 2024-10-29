@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ListGenres.scss';
+import styles from './ListGenres.module.scss';
 import SwitcherGenres from './SwitcherGenres/SwitcherGenres';
 
 const gameGenres = [
@@ -22,9 +22,9 @@ const ListGenres = () => {
       };
     
     return (
-        <ul className="genre__list-genres list-genres">
+        <ul className={`${styles["genre__list-genres"]} ${styles["list-genres"]}`}>
             {popularGenres.map((genreObj, index) => (
-            <li key={index} className="list-genres__item">
+            <li key={index} className={styles["list-genres__item"]}>
                 <SwitcherGenres key={genreObj.genre} onClick={() => handleGenreClick(genreObj.genre)} active={activeGenre === genreObj.genre}>{genreObj.genre}</SwitcherGenres>
             </li>
             ))}

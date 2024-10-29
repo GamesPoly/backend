@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Hero.scss";
+import styles from "./Hero.module.scss";
 import decorateStarMini from "@assets/decorate-star-mini.svg";
 import cover from "@assets/cover-game1.png";
 import arrows from "@assets/arrows.svg";
@@ -15,43 +15,43 @@ import ad3 from "@assets/ad-player.png";
 import games from "@assets/games-list.png";
 const Hero = () => {
   return (
-    <section className="hero">
-      <div className="hero__head">
-        <div className="hero__tools">
-          <nav className="hero__navigate navigate">
+    <section className={styles["hero"]}>
+      <div className={styles["hero__head"]}>
+        <div className={styles["hero__tools"]}>
+          <nav className={styles["hero__navigate navigate"]}>
             <img
               src={decorateStarMini}
               alt="Decorate Star"
-              className="navigate__decoration"
+              className={styles["navigate__decoration"]}
             />
-            <ul className="navigate__list">
-              <li className="navigate__item">
-                <a href="/" className="navigate__link navigate__link--active">
+            <ul className={styles["navigate__list"]}>
+              <li className={styles["navigate__item"]}>
+                <a href="/" className={`${styles["navigate__link"]} ${styles["navigate__link--active"]}`}>
                   Главная
                 </a>
               </li>
-              <li className="navigate__item">
-                <a href="#popular" className="navigate__link">
+              <li className={styles["navigate__item"]}>
+                <a href="#popular" className={styles["navigate__link"]}>
                   Популярное
                 </a>
               </li>
-              <li className="navigate__item">
-                <Link to="/about-us" className="navigate__link">
+              <li className={styles["navigate__item"]}>
+                <Link to="/about-us" className={styles["navigate__link"]}>
                   О нас
                 </Link>
               </li>
             </ul>
           </nav>
-          <div className="hero__last-update last-update">
-            <img src={cover} alt="" className="last-update__cover" />
-            <div className="last-update__details">
-              <div className="last-update__info">
-                <h3 className="last-update__title">Veles Day</h3>
-                <p className="last-update__desc">upd. 2 час назад</p>
+          <div className={`${styles["hero__last-update"]} ${styles["last-update"]}`}>
+            <img src={cover} alt="" className={styles["last-update__cover"]} />
+            <div className={styles["last-update__details"]}>
+              <div className={styles["last-update__info"]}>
+                <h3 className={styles["last-update__title"]}>Veles Day</h3>
+                <p className={styles["last-update__desc"]}>upd. 2 час назад</p>
               </div>
-              <a href="/" className="last-update__link">
-                <p className="last-update__open">Открыть</p>
-                <div className="last-update__circle">
+              <a href="/" className={styles["last-update__link"]}>
+                <p className={styles["last-update__open"]}>Открыть</p>
+                <div className={styles["last-update__circle"]}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="15"
@@ -70,88 +70,88 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="hero__info">
-          <h1 className="hero__title">Публикуйся</h1>
-          <h1 className="hero__title">обсуждай проекты</h1>
-          <h1 className="hero__title">
-            <span className="hero__title hero__title--highlighted">
+        <div className={styles["hero__info"]}>
+          <h1 className={styles["hero__title"]}>Публикуйся</h1>
+          <h1 className={styles["hero__title"]}>обсуждай проекты</h1>
+          <h1 className={styles["hero__title"]}>
+            <span className={`${styles["hero__title"]} ${styles["hero__title--highlighted"]}`}>
               продвигай
             </span>{" "}
             свои игры
           </h1>
-          <div className="hero__details">
+          <div className={styles["hero__details"]}>
             <img
               src={arrows}
               alt="Hero Arrows Decorate"
-              className="hero__arrows"
+              className={styles["hero__arrows"]}
             />
-            <p className="hero__desc">
+            <p className={styles["hero__desc"]}>
               Расскажите о{" "}
-              <span className="hero__desc hero__desc--highlighted">
+              <span className={`${styles["hero__desc"]} ${styles["hero__desc--highlighted"]}`}>
                 своих проектах
               </span>
               ,{" "}
-              <span className="hero__desc hero__desc--highlighted">
+              <span className={`${styles["hero__desc"]} ${styles["hero__desc--highlighted"]}`}>
                 оценивайте
               </span>{" "}
               работы коллег, и объединяйтесь в{" "}
-              <span className="hero__desc hero__desc--highlighted">
+              <span className={`${styles["hero__desc"]} ${styles["hero__desc--highlighted"]}`}>
                 команды
               </span>
             </p>
           </div>
         </div>
       </div>
-      <ul className="hero__cards">
-        <li className="hero__card">
-          <div className="hero__ad">
-            <div className="hero__ad-line">
-              <p className="hero__adtext">Делитесь</p>
+      <ul className={styles["hero__cards"]}>
+        <li className={styles["hero__card"]}>
+          <div className={styles["hero__ad"]}>
+            <div className={styles["hero__ad-line"]}>
+              <p className={styles["hero__adtext"]}>Делитесь</p>
               <img
                 src={plus}
                 alt="Decorate plus in circle"
-                className="hero__adplus"
+                className={styles["hero__adplus"]}
               />
             </div>
-            <div className="hero__ad-line">
+            <div className={styles["hero__ad-line"]}>
               <img
                 src={plus}
                 alt="Decorate plus in circle"
-                className="hero__adplus"
+                className={styles["hero__adplus"]}
               />
-              <p className="hero__adtext">Оценивайте</p>
+              <p className={styles["hero__adtext"]}>Оценивайте</p>
             </div>
-            <div className="hero__ad-line">
-              <p className="hero__adtext">Сотрудничайте</p>
+            <div className={styles["hero__ad-line"]}>
+              <p className={styles["hero__adtext"]}>Сотрудничайте</p>
             </div>
           </div>
         </li>
-        <li className="hero__card">
-          <img src={star} alt="Decorate star" className="hero__star" />
+        <li className={styles["hero__card"]}>
+          <img src={star} alt="Decorate star" className={styles["hero__star"]} />
         </li>
         <li className="hero__card hero__card--bigger">
-          <img src={photo} alt="Photo for Hero card" className="hero__photo" />
+          <img src={photo} alt="Photo for Hero card" className={styles["hero__photo"]} />
           <img
             src={lines}
             alt="Lines decorated Hero card"
-            className="hero__lines"
+            className={styles["hero__lines"]}
           />
         </li>
-        <li className="hero__card">
-          <img src={ad1} alt="Decorate poster" className="hero__cover" />
+        <li className={styles["hero__card"]}>
+          <img src={ad1} alt="Decorate poster" className={styles["hero__cover"]} />
         </li>
-        <li className="hero__card">
-          <img src={gamepad} alt="Decorate gamepad" className="hero__gamepad" />
+        <li className={styles["hero__card"]}>
+          <img src={gamepad} alt="Decorate gamepad" className={styles["hero__gamepad"]} />
         </li>
-        <li className="hero__card">
-          <img src={ad2} alt="Decorate poster" className="hero__cover" />
+        <li className={styles["hero__card"]}>
+          <img src={ad2} alt="Decorate poster" className={styles["hero__cover"]} />
         </li>
-        <li className="hero__card">
-          <img src={ad3} alt="Decorate poster" className="hero__cover" />
+        <li className={styles["hero__card"]}>
+          <img src={ad3} alt="Decorate poster" className={styles["hero__cover"]} />
         </li>
-        <li className="hero__card hero__card--higher">
-          <p className="hero__about">
-            <span className="hero__about hero__about--highlighted">
+        <li className={`${styles["hero__card"]} ${styles["hero__card--higher"]}`}>
+          <p className={styles["hero__about"]}>
+            <span className={`${styles["hero__about"]} ${styles["hero__about--highlighted"]}`}>
               Подписывайтесь
             </span>{" "}
             на самых интересных разработчиков, чтобы получать их игровые новинки
@@ -160,7 +160,7 @@ const Hero = () => {
           <img
             src={games}
             alt="Decorate images covers by games"
-            className="hero__games"
+            className={styles["hero__games"]}
           />
         </li>
       </ul>

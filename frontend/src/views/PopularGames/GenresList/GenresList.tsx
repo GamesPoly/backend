@@ -1,5 +1,5 @@
 import React from 'react';
-import './GenresList.scss'
+import styles from './GenresList.module.scss'
 import GenresItem from './GenresItem/GenresItem';
 
 type Popular = {
@@ -14,9 +14,9 @@ type GenresListProps = {
 
 function GenresList({title, genres}: GenresListProps) {
     return ( 
-        <section className="genres-list">
-            <h3 className="genres-list__header">{title}</h3>
-            <ul className="genres-list__body">
+        <section className={styles["genres-list"]}>
+            <h3 className={styles["genres-list__header"]}>{title}</h3>
+            <ul className={styles["genres-list__body"]}>
                 {genres.map((genre) => <GenresItem name={genre.name}  cover={genre.cover} key={genre.name}/>)}
             </ul>
             
