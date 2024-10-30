@@ -129,7 +129,7 @@ const Hero = () => {
         <li className={styles["hero__card"]}>
           <img src={star} alt="Decorate star" className={styles["hero__star"]} />
         </li>
-        <li className="hero__card hero__card--bigger">
+        <li className={`${styles['hero__card']} ${styles['hero__card--bigger']}`}>
           <img src={photo} alt="Photo for Hero card" className={styles["hero__photo"]} />
           <img
             src={lines}
