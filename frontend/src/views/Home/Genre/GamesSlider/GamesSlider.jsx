@@ -49,18 +49,18 @@ const GamesSlider = () => {
     setSelectedIdx((prevIdx) => (prevIdx === 0 ? images.length - 1 : prevIdx - 1));
     setSelectedDot((prevDot) => (prevDot === 1 ? images.length: prevDot - 1));
     setIsButtonDisabled(true);
-    setTimeout(() => {
-      setIsButtonDisabled(false);
-    }, 1000);
+    setIsButtonDisabled(false);
+    // setTimeout(() => {
+    // }, 100);
   };
 
   const nextSlide = () => {
     setSelectedIdx((prevIdx) => (prevIdx === images.length - 1 ? 0 : prevIdx + 1));
     setSelectedDot((prevDot) => (prevDot === images.length ? 1: prevDot + 1))
     setIsButtonDisabled(true);
-    setTimeout(() => {
-      setIsButtonDisabled(false);
-    }, 800);
+    setIsButtonDisabled(false);
+    // setTimeout(() => {
+    // }, 100);
   };
 
   
