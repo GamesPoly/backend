@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
-import "./TeamDisplay.scss";
+import styles from  "./TeamDisplay.module.scss";
 export default function TeamDisplay({ devTeamId }: { devTeamId: string }) {
   const [teamData, setTeamData] = useState({
     id: "1",
@@ -75,25 +75,25 @@ export default function TeamDisplay({ devTeamId }: { devTeamId: string }) {
 
   return (
     <>
-      <div className="team-display__container">
-        <div className="team-display__members">
+      <div className={styles["team-display__container"]}>
+        <div className={styles["team-display__members"]}>
           {teamData.members.map((memberId) => (
             <Link
               to={`/users/${memberId}`}
               key={memberId}
-              className="team-display__member-link"
+              className={styles["team-display__member-link"]}
             >
               <img
                 src={fetchUserData(memberId)?.profileImgUrl}
                 alt={fetchUserData(memberId)?.name}
-                className="team-display__member-img"
+                className={styles["team-display__member-img"]}
               />
             </Link>
           ))}
         </div>
-        <div className="team-display__right">
-          <p className="team-display__team-label">Команда</p>
-          <p className="team-display__team-name">{teamData.name}</p>
+        <div className={styles["team-display__right"]}>
+          <p className={styles["team-display__team-label"]}>Команда</p>
+          <p className={styles["team-display__team-name"]}>{teamData.name}</p>
         </div>
       </div>
     </>

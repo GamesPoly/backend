@@ -1,5 +1,5 @@
 import React from 'react';
-import './GamesItem.scss'
+import styles from './GamesItem.module.scss'
 
 type PopularItemsProps = {
     name: string,
@@ -16,11 +16,11 @@ function GamesItem({name, desc, cover}: PopularItemsProps) {
     };
 
     return (  
-        <li className="games-list__card">
-            <img src={cover} alt="Изображение игры" className='games-list__card-cover' />
-            <div className="games-list__card-text">
-                <h4 className="games-list__card-title">{name}</h4>
-                <p className="games-list__card-desc">{truncate(desc)}</p>
+        <li className={styles["games-list__card"]}>
+            <img src={cover} alt="Изображение игры" className={styles['games-list__card-cover']} />
+            <div className={styles["games-list__card-text"]}>
+                <h4 className={styles["games-list__card-title"]}>{name}</h4>
+                <p className={styles["games-list__card-desc"]}>{truncate(desc)}</p>
             </div>
         </li>
     );

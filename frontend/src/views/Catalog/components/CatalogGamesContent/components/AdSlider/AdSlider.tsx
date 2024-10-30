@@ -1,5 +1,5 @@
 import React from "react";
-import "./AdSlider.scss";
+import styles from "./AdSlider.module.scss";
 import AdBanner from "./components/AdBanner/AdBanner";
 import AdBand from "./components/AdBand/AdBand";
 import type { Game } from "../../types/index";
@@ -10,13 +10,13 @@ type AdSliderProps = {
 
 export default function AdSlider({ games }: AdSliderProps) {
   return (
-    <section className="ads-slider">
+    <section className={styles["ads-slider"]}>
       {games.length > 0 /* Если есть игры по запросу */ ? (
         <>
           <AdBanner gameAdObj={games[0]} />
-          <ul className="ads-slider__list">
+          <ul className={styles["ads-slider__list"]}>
             {games.slice(1).map((game) => (
-              <li className="ads-slider__item" key={game.id}>
+              <li className={styles["ads-slider__item"]} key={game.id}>
                 <AdBand gameAdObj={game} />
               </li>
             ))}
@@ -30,19 +30,19 @@ export default function AdSlider({ games }: AdSliderProps) {
               name: "Ничего не найдено по вашим фильтрам!",
             }}
           />
-          <ul className="ads-slider__list">
+          <ul className={styles["ads-slider__list"]}>
             {" "}
             {/* скелеты в AdBand */}
-            <li className="ads-slider__item">
+            <li className={styles["ads-slider__item"]}>
               <AdBand gameAdObj={{}} />
             </li>
-            <li className="ads-slider__item">
+            <li className={styles["ads-slider__item"]}>
               <AdBand gameAdObj={{}} />
             </li>
-            <li className="ads-slider__item">
+            <li className={styles["ads-slider__item"]}>
               <AdBand gameAdObj={{}} />
             </li>
-            <li className="ads-slider__item">
+            <li className={styles["ads-slider__item"]}>
               <AdBand gameAdObj={{}} />
             </li>
           </ul>

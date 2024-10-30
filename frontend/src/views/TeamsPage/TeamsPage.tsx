@@ -1,29 +1,29 @@
 import React from 'react'
-import './TeamsPage.scss'
+import styles from './TeamsPage.module.scss'
 import popular_teams from '@assets/popular-teams.png'
 import team from '@assets/team.png'
 import person from '@assets/Rectangle 56.png'
 
 function TeamsPage() {
 	return (
-		<main className='teams__wrapper'>
-			<div className='banner'>
-				<div className='text'>
-					<h1 className='first__h1'>Команды</h1>
-					<h1 className='second__h1'>PolyGames</h1>
-					<p className='commands__p'>
+		<main className={styles['teams__wrapper']}>
+			<div className={styles['banner']}>
+				<div className={styles['text']}>
+					<h1 className={styles['first__h1']}>Команды</h1>
+					<h1 className={styles['second__h1']}>PolyGames</h1>
+					<p className={styles['commands__p']}>
 						В PolyGames представлено 23 команды разработчиков. <br />
 						Все они студенты Московского Политеха с огромным потенциалом и
 						желанием создавать что-то новое.
 					</p>
 				</div>
-				<div className='photo'>
-					<img className='team__img' src={team} alt='team' />
+				<div className={styles['photo']}>
+					<img className={styles['team__img']} src={team} alt='team' />
 				</div>
 			</div>
-			<div className='popular__teams'>
-				<h2 className='pop__teams__h2'>Популярные команды</h2>
-				<div className='teams__photos'>
+			<div className={styles['popular__teams']}>
+				<h2 className={styles['pop__teams__h2']}>Популярные команды</h2>
+				<div className={styles['teams__photos']}>
 					<div>
 						<img src={popular_teams} alt='team' />
 						<p>Door 497</p>
@@ -50,12 +50,12 @@ function TeamsPage() {
 					</div>
 				</div>
 			</div>
-			<div className='down__banner'>
-				<div className='first__block'>
-					<div className='down__photo'>
-						<img className='person__img' src={person} alt='person' />
+			<div className={styles['down__banner']}>
+				<div className={styles['first__block']}>
+					<div className={styles['down__photo']}>
+						<img className={styles['person__img']} src={person} alt='person' />
 					</div>
-					<div className='down__text'>
+					<div className={styles['down__text']}>
 						<h1>Хочешь создавать свои игры?</h1>
 						<p>Собери свою команду</p>
 						<p>Пройдите регистрацию на сайте</p>
@@ -63,8 +63,8 @@ function TeamsPage() {
 						<h1>Будьте первыми!</h1>
 					</div>
 				</div>
-				<div className='registration__btn'>
-					<div className='btn__circle'>
+				<div className={styles['registration__btn']}>
+					<div className={styles['btn__circle']}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='15'
@@ -79,7 +79,7 @@ function TeamsPage() {
 							/>
 						</svg>
 					</div>
-					<p className='describe__p'>Подробнее</p>
+					<p className={styles['describe__p']}>Подробнее</p>
 				</div>
 			</div>
 		</main>

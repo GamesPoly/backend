@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import './EmailInput.scss';
+import styles from './EmailInput.module.scss';
 
 interface EmailInputProps {
 	onEmailChange: (email: string) => void
@@ -17,13 +17,13 @@ const EmailInput: FC<EmailInputProps> = ({ onEmailChange }) => {
 
 	return (
 		<div className='email'>
-			<label className='email__label' htmlFor='email'>
+			<label className={styles['email__label']} htmlFor='email'>
 				Email пользователя
 			</label>
 			<input
 				type='email'
 				name='email'
-				className='email__input'
+				className={styles['email__input']}
 				placeholder='Email пользователя'
 				value={email}
 				onChange={handleInputChange}

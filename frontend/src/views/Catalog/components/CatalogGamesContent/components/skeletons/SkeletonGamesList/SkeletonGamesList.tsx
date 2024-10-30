@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./SkeletonGamesList.scss";
+import styles from "./SkeletonGamesList.module.scss";
 import GamesItem from "../../GamesList/GamesItem/GamesItem";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -10,16 +10,16 @@ type SkeletonGamesListProps = Partial<{
 }>;
 function SkeletonGamesList({ title }: SkeletonGamesListProps) {
   return (
-    <section className="games__list">
-      <div className="list__head">
-        <h3 className="games__header">
+    <section className={styles["games__list"]}>
+      <div className={styles["list__head"]}>
+        <h3 className={styles["games__header"]}>
           {title || <Skeleton width={"600px"} />}
         </h3>
-        <Link to="/" className="games__show">
+        <Link to="/" className={styles["games__show"]}>
           <Skeleton />
         </Link>
       </div>
-      <ul className="list__body">
+      <ul className={styles["list__body"]}>
         <GamesItem />
         <GamesItem />
         <GamesItem />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./GamesItem.scss";
+import styles from "./GamesItem.module.scss";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useNavigate } from "react-router-dom";
@@ -24,23 +24,23 @@ function GamesItem({ name, desc, imageUrl }: GamesItemProps) {
   // };
 
   return (
-    <li className="list__card">
+    <li className={styles["list__card"]}>
       <div
         // onClick={() => openCard({ name: name, desc: desc, imageUrl: imageUrl })}
-        className="card__content"
+        className={styles["card__content"]}
       >
-        {!isLoaded && <Skeleton className="card__cover" />}
+      {!isLoaded && <Skeleton className={styles["card__cover"]} />}
         <img
           src={imageUrl}
           alt={name}
-          className="card__cover"
+          className={styles["card__cover"]}
           onLoad={() => setIsLoaded(true)}
           style={{ display: isLoaded ? "block" : "none" }}
         />
 
-        <div className="card__text">
-          <h4 className="card__title">{name || <Skeleton />}</h4>
-          <p className="card__desc">{desc || <Skeleton count={10} />}</p>
+        <div className={styles["card__text"]}>
+          <h4 className={styles["card__title"]}>{name || <Skeleton />}</h4>
+          <p className={styles["card__desc"]}>{desc || <Skeleton count={10} />}</p>
         </div>
       </div>
     </li>

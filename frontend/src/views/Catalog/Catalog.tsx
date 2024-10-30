@@ -1,5 +1,5 @@
 import React from "react";
-import "./Catalog.scss";
+import styles from "./Catalog.module.scss";
 import AsideSettings from "./components/AsideSettings/AsideSettings";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { CatalogFiltersProvider } from "@context/CatalogFiltersProvider";
@@ -9,9 +9,9 @@ function Catalog() {
   return (
     <CatalogFiltersProvider>
       <SkeletonTheme baseColor="#202020" highlightColor="#fff">
-        <main className="catalog">
+        <main className={styles["catalog"]}>
           <AsideSettings />
-          <div className="catalog__wrapper">
+          <div className={styles["catalog__wrapper"]}>
             <CatalogGamesContent />
           </div>
         </main>

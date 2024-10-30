@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import GameCard from "./components/GameCard/GameCard";
 import GameDescription from "./components/GameDescription/GameDescription";
 import ReviewsList from "./components/ReviewsList/ReviewsList";
+import styles from "../Game/Game.module.scss"
 
 type GameParams = {
   id: string;
@@ -11,8 +12,8 @@ type GameParams = {
 const Game: React.FC = () => {
   const { id } = useParams<GameParams>();
 
-  return <main className="game">
-    <div className="game__wrapper">{
+  return <main className={styles["game"]}>
+    <div className={styles["game__wrapper"]}>{
     id ? <>
 {/* пока просто по приколу id в пропсах, так как все на заглушках */}
   <GameCard id={id} />

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./GameBannerItem.scss"
+import styles from "./GameBannerItem.module.scss"
 
 type GameBannerItemProps = {
     game: {
@@ -14,21 +14,21 @@ type GameBannerItemProps = {
 
 function GameBannerItem( {game}: GameBannerItemProps) {
     return ( 
-        <div className="game-banner-item">
-            <div className="game-banner-item__image">
+        <div className={styles["game-banner-item"]}>
+            <div className={styles["game-banner-item__image"]}>
             </div>
-            <div className="game-banner-item__info">
-                <h2 className="game-banner-item__title">{game.name}</h2>
-                <p className="game-banner-item__desc">{game.desc}</p>
-                <div className="game-banner-item__tags">
+            <div className={styles["game-banner-item__info"]}>
+                <h2 className={styles["game-banner-item__title"]}>{game.name}</h2>
+                <p className={styles["game-banner-item__desc"]}>{game.desc}</p>
+                <div className={styles["game-banner-item__tags"]}>
                     {game.tags.map((item, index) => (
                         <p key={index}>#{item}</p>
                      ))}
                 </div>
-                <Link to="/populargames" className="game-banner-item__link">
-                <p className="game-banner-item__more">Подробнее</p>
+                <Link to="/populargames" className={styles["game-banner-item__link"]}>
+                <p className={styles["game-banner-item__more"]}>Подробнее</p>
                 <svg
-                    className="game-banner-item__arrow"
+                    className={styles["game-banner-item__arrow"]}
                     xmlns="http://www.w3.org/2000/svg"
                     width="50"
                     height="50"
