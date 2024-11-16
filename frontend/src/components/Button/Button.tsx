@@ -9,7 +9,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ text }) => {
     return (
         <button className={styles['styled-button']}>
-            <img //fasdfsadf
+            <img //fasdfsadf not empty
                 src={arrow}
                 alt="Arrow"
                 className={styles['styled-button__arrow']}
