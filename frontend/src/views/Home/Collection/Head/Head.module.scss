@@ -22,7 +22,8 @@
     justify-content: space-between;
 }
 
-.currently, .next-info {
+.currently,
+.next-info {
     cursor: pointer;
     height: min-content;
     display: flex;
@@ -35,7 +36,8 @@
     font-weight: 600;
 }
 
-.currently__text, .next-info__text {
+.currently__text,
+.next-info__text {
     padding: 17px 23px 18px;
     text-transform: uppercase;
     margin: 0;
@@ -49,7 +51,8 @@
     }
 }
 
-.currently__arrow, .next-info__arrow {
+.currently__arrow,
+.next-info__arrow {
     transition: all 0.15s ease;
     &:hover {
         opacity: 0.85;
@@ -60,7 +63,6 @@
     text-align: center;
 }
 .collection__name {
-    
     color: var(--text-primary);
     font-size: 28px;
     font-weight: 600;
@@ -78,7 +80,7 @@
     cursor: pointer;
     border-radius: 20px;
     border: 1px solid var(--text-primary);
-        background: transparent;
+    background: transparent;
     &--active {
         width: 12px;
         height: 12px;

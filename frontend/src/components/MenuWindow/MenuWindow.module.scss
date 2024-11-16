@@ -13,16 +13,16 @@
     background-color: var(--background-color);
     transition: all 1.2s ease;
     border-radius: 12px 0 0 12px;
-    border: 1px solid transparent;  
+    border: 1px solid transparent;
     overflow: hidden;
 }
-  
-  .menu-window--open {
+
+.menu-window--open {
     right: 0;
     top: 40px;
     border: 1px solid var(--background-secondary);
     // margin: 40px 12px;
-  }
+}
 
 .menu-window__title {
     margin-top: 30%;
@@ -60,7 +60,7 @@
     }
 }
 
-.menu-window__number{
+.menu-window__number {
     font-weight: 400;
     font-size: 14px;
     border: 1px solid var(--text-secondary);
@@ -78,7 +78,7 @@
     cursor: pointer;
     background: none;
     border: none;
-    
+
     transition: all 0.1s ease;
     width: fit-content;
     &:hover {
@@ -125,6 +125,6 @@
 //     .menu-window {
 //         width: min(100%, 500px);
 //         right: calc(min(100%, 500px) * -1);
-       
+
 //     }
 // }

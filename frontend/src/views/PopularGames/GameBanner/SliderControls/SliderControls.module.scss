@@ -14,7 +14,8 @@
 }
 
 .slider-controls {
-    &__prev, &__next {
+    &__prev,
+    &__next {
         display: flex;
         align-items: center;
         background: transparent;
@@ -23,7 +24,6 @@
         color: var(--text-secondary);
     }
 }
-
 
 .slider-controls__dots {
     display: flex;
