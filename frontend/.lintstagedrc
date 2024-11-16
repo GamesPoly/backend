@@ -1,0 +1,3 @@
+{
+    "frontend/**/*": "npx prettier --write --ignore-unknown **/*"
+}
