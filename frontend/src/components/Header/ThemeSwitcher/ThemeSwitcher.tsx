@@ -1,23 +1,23 @@
-import styles from "./ThemeSwitcher.module.scss";
-import React from "react";
-import useTheme from "@hooks/useTheme";
+import styles from './ThemeSwitcher.module.scss'
+import React from 'react'
+import useTheme from '@hooks/useTheme'
 
 const ThemeSwitcher = () => {
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme } = useTheme()
     const handleLightThemeClick = () => {
-        setTheme("light");
-    };
+        setTheme('light')
+    }
     const handleDarkThemeClick = () => {
-        setTheme("dark");
-    };
+        setTheme('dark')
+    }
     return (
-        <div className={styles["theme-switcher"]}>
+        <div className={styles['theme-switcher']}>
             <button
                 onClick={handleDarkThemeClick}
                 className={
-                    theme == "dark"
-                        ? `${styles["theme-switcher__btn"]} ${styles["theme-switcher__btn--active"]}`
-                        : styles["theme-switcher__btn"]
+                    theme == 'dark'
+                        ? `${styles['theme-switcher__btn']} ${styles['theme-switcher__btn--active']}`
+                        : styles['theme-switcher__btn']
                 }
             >
                 Темная
@@ -25,15 +25,15 @@ const ThemeSwitcher = () => {
             <button
                 onClick={handleLightThemeClick}
                 className={
-                    theme == "light"
-                        ? `${styles["theme-switcher__btn"]} ${styles["theme-switcher__btn--active"]}`
-                        : styles["theme-switcher__btn"]
+                    theme == 'light'
+                        ? `${styles['theme-switcher__btn']} ${styles['theme-switcher__btn--active']}`
+                        : styles['theme-switcher__btn']
                 }
             >
                 Светлая
             </button>
         </div>
-    );
-};
+    )
+}
 
-export default ThemeSwitcher;
+export default ThemeSwitcher

@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import Preview from './Preview/Preview';
-import styles from'./AboutUs.module.scss';
-import WeAre from './WeAre/WeAre';
-import CanDo from './CanDo/CanDo';
-import ForDevelopers from './ForDevelopers/ForDevelopers';
+import React, { useEffect } from 'react'
+import Preview from './Preview/Preview'
+import styles from './AboutUs.module.scss'
+import WeAre from './WeAre/WeAre'
+import CanDo from './CanDo/CanDo'
+import ForDevelopers from './ForDevelopers/ForDevelopers'
 const AboutUs = ({ setIsFooterVisible }) => {
     useEffect(() => {
-        setIsFooterVisible(true);
+        setIsFooterVisible(true)
     }, [])
 
     return (
@@ -16,7 +16,7 @@ const AboutUs = ({ setIsFooterVisible }) => {
             <CanDo />
             <ForDevelopers />
         </main>
-    );
-};
+    )
+}
 
-export default AboutUs;
+export default AboutUs

@@ -1,32 +1,37 @@
-import React from 'react';
+import React from 'react'
 import styles from './GamesList.module.scss'
-import GamesItem from './GamesItem/GamesItem';
+import GamesItem from './GamesItem/GamesItem'
 
 type Popular = {
-    name: string,
-    desc: string,
+    name: string
+    desc: string
     cover: any
 }
 
 type GamesListProps = {
-    title:string,
-    games: Popular[],
+    title: string
+    games: Popular[]
     size: 'small' | 'big'
 }
 
-function GamesList({title, games, size}: GamesListProps) {
+function GamesList({ title, games, size }: GamesListProps) {
+    const gamesListBody = `games-list__body games-list__body--${size}`
 
-    const gamesListBody = `games-list__body games-list__body--${size}`;
-
-    return ( 
-        <section className={styles["games-list"]}>
-            <h3 className={styles["games-list__header"]}>{title}</h3>
+    return (
+        <section className={styles['games-list']}>
+            <h3 className={styles['games-list__header']}>{title}</h3>
             <ul className={gamesListBody}>
-                {games.map((game) => <GamesItem name={game.name} desc={game.desc} cover={game.cover} key={game.name}/>)}
+                {games.map((game) => (
+                    <GamesItem
+                        name={game.name}
+                        desc={game.desc}
+                        cover={game.cover}
+                        key={game.name}
+                    />
+                ))}
             </ul>
-            
         </section>
-     );
+    )
 }
 
-export default GamesList;
+export default GamesList

@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Search.module.scss";
+import React from 'react'
+import styles from './Search.module.scss'
 
 const SearchBar = () => {
     return (
@@ -21,7 +21,7 @@ const SearchBar = () => {
                 <path d="M16.8535 17.5L19.8535 20.5" stroke-linecap="round" />
             </svg>
         </div>
-    );
-};
+    )
+}
 
-export default SearchBar;
+export default SearchBar
