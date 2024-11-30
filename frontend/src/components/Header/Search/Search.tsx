@@ -4,6 +4,7 @@ import { gamesSearchError, gamesSearchResults, game } from "./types";
 import SearchCard from "./components/SearchCard/SearchCard";
 import { jsonData } from "./consts/data";
 
+
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<gamesSearchResults>([]);
@@ -95,4 +96,5 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+
+export default SearchBar

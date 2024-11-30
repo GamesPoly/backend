@@ -27,15 +27,16 @@
 }
 
 .game-banner {
-    &__prev, &__next {
+    &__prev,
+    &__next {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 55px;
         height: 55px;
         z-index: 10;
-        color: var(--text-primary) ;
-        background-color: var(--background-extra) ;
+        color: var(--text-primary);
+        background-color: var(--background-extra);
         border: none;
         border-radius: 50%;
         cursor: pointer;

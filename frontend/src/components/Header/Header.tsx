@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "@assets/logo.svg";
-import Search from "./Search/Search";
-import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher";
-import MenuButton from "./MenuButton/MenuButton";
-import styles from "./Header.module.scss";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import logo from '@assets/logo.svg'
+import Search from './Search/Search'
+import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher'
+import MenuButton from './MenuButton/MenuButton'
+import styles from './Header.module.scss'
 
 interface HeaderProps {
-    openMenu: () => void;
-    showHeader: boolean;
+    openMenu: () => void
+    showHeader: boolean
 }
 
 const Header: React.FC<HeaderProps> = ({ openMenu, showHeader }) => {
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ openMenu, showHeader }) => {
                 </ul>
             </div>
         </header>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header

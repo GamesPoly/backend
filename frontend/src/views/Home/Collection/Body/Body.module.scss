@@ -1,4 +1,4 @@
-    @import '@/variables.scss';
+@import '@/variables.scss';
 .collection__body {
     margin-top: 6px;
     background: var(--background-detailed);
@@ -33,7 +33,6 @@
 }
 
 .collection__title {
-    
     white-space: nowrap;
     font-size: 68px;
     font-weight: 500;
@@ -60,11 +59,11 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(372px, 1fr));
-    gap: 20px; 
+    gap: 20px;
 }
 
 .collection__card {
     display: flex;
     flex-direction: column;
-    gap: 16px
+    gap: 16px;
 }

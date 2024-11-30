@@ -1,15 +1,15 @@
-import React from "react";
-import styles from "./MenuButton.module.scss";
+import React from 'react'
+import styles from './MenuButton.module.scss'
 
 interface HeaderProps {
-    clickButton: () => void;
+    clickButton: () => void
 }
 
 const MenuButton: React.FC<HeaderProps> = ({ clickButton }) => {
     return (
-        <button onClick={clickButton} className={styles["menu-button"]}>
+        <button onClick={clickButton} className={styles['menu-button']}>
             <svg
-                className={styles["menu-button__icon"]}
+                className={styles['menu-button__icon']}
                 xmlns="http://www.w3.org/2000/svg"
                 width="50"
                 height="50"
@@ -25,7 +25,7 @@ const MenuButton: React.FC<HeaderProps> = ({ clickButton }) => {
                 />
             </svg>
         </button>
-    );
-};
+    )
+}
 
-export default MenuButton;
+export default MenuButton

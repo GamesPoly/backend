@@ -1,7 +1,5 @@
 @import '@/variables.scss';
 
-
-
 .game-banner-item {
     display: flex;
     flex-direction: row;
@@ -11,8 +9,6 @@
     height: 100%;
     max-height: 390px;
 }
-
-
 
 .game-banner-item__info {
     display: flex;
@@ -24,7 +20,7 @@
     min-height: 390px;
     border-radius: 8px;
     padding: 30px 20px 12px;
-    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
 }
 
@@ -34,7 +30,6 @@
 }
 
 .game-banner-item__desc {
-    
     color: var(--text-primary);
     padding: 0;
     font-size: 1.5rem;
@@ -44,7 +39,7 @@
     display: flex;
     gap: 10px;
     color: var(--accent-color);
-    
+
     & p {
         padding: 0;
         margin: 0;
@@ -57,7 +52,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
+
     justify-self: end;
 }
 
@@ -69,7 +64,7 @@
     padding: 0;
     &:hover {
         opacity: 0.85;
-    }   
+    }
 }
 
 .game-banner-item__arrow {
