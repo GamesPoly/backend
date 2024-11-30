@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './GamesList.module.scss'
+import classNames from 'classnames'
+
 import GamesItem from './GamesItem/GamesItem'
 
 type Popular = {
@@ -15,7 +17,10 @@ type GamesListProps = {
 }
 
 function GamesList({ title, games, size }: GamesListProps) {
-    const gamesListBody = `games-list__body games-list__body--${size}`
+    const gamesListBody = classNames(
+        styles['games-list__body'],
+        styles[`games-list__body--${size}`]
+    )
 
     return (
         <section className={styles['games-list']}>
