@@ -78,10 +78,7 @@ const App = () => {
                         <Route path="/auth" element={<Auth />} />
                         <Route path="/register" element={<Registration />} />
                         <Route path="/post-form" element={<PostForm />} />
-                        <Route
-                            path="/popular-games"
-                            element={<PopularGames />}
-                        />
+                        <Route path="/popular" element={<PopularGames />} />
                         <Route path="/games/:id" element={<Game />} />
                         {/* 404 */}
                         <Route path="*" element={<NotFound />} />

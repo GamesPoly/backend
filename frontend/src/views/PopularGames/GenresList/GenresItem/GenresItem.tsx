@@ -9,11 +9,14 @@ type GenresItemsProps = {
 function GenresItem({ name, cover }: GenresItemsProps) {
     return (
         <li className={styles['genres-list__card']}>
-            <img
-                src={cover}
-                alt="Изображение игры"
-                className={styles['genres-list__card-cover']}
-            />
+            <div className={styles['genres-list__card__top']}>
+                <img
+                    src={cover}
+                    alt="Изображение игры"
+                    className={styles['genres-list__card-cover']}
+                />
+            </div>
+
             <div className={styles['genres-list__card-text']}>
                 <h4 className={styles['genres-list__card-title']}>{name}</h4>
             </div>

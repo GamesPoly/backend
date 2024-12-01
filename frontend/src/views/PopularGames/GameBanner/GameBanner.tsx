@@ -31,6 +31,14 @@ function GameBanner() {
             tags: ['Симуляция', 'MosPolyJam2023'],
             bgColor: '#00000',
         },
+        {
+            id: 4,
+            image: banner,
+            name: 'Neo_Cat',
+            desc: 'чайте новыеasdasdasdasdasdasdas механики, чтобы устранять баги эффективнее. Вперёд НЕО КОТ, я в тебя верю!',
+            tags: ['Симуляция', 'MosPolyJam2023'],
+            bgColor: '#00000',
+        },
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0)

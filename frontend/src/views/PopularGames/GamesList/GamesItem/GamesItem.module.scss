@@ -18,7 +18,7 @@
 .games-list__card-text {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .games-list__card-title {
@@ -29,4 +29,5 @@
 .games-list__card-desc {
     font-size: 1.25rem;
     font-weight: 400;
+    margin-top: 10px;
 }
