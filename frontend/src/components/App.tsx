@@ -14,6 +14,7 @@ import MenuWindow from './MenuWindow/MenuWindow'
 import Footer from './Footer/Footer'
 import NotFound from './NotFound/NotFound'
 import Game from '../views/Game/Game'
+import AboutUs from '../views/AboutUs/AboutUs'
 
 const App = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -78,6 +79,7 @@ const App = () => {
                         <Route path="/auth" element={<Auth />} />
                         <Route path="/register" element={<Registration />} />
                         <Route path="/post-form" element={<PostForm />} />
+                        <Route path="/about-us" element={<AboutUs />} />
                         <Route
                             path="/popular-games"
                             element={<PopularGames />}

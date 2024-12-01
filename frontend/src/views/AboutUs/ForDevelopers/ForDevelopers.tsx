@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './ForDevelopers.module.scss'
+import { Link } from 'react-router-dom'
+import arrow from './arrow.svg'
 
 const ForDevelopers = () => {
     return (
@@ -10,6 +12,10 @@ const ForDevelopers = () => {
                 шанс поделиться своими игровыми мирами с нашим сообществом -
                 загружайте свои игры.
             </p>
+            <Link to={'/teams'} className={styles['for-developers__button']}>
+                <img src={arrow} alt="" />
+                Подробнее
+            </Link>
         </div>
     )
 }
