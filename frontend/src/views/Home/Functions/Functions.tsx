@@ -16,12 +16,12 @@ const Functions = () => {
                 <li className="functions__item">
                     <Ability data={{ title: 'Команды', number: 2, desc: '23 Команды', url: '/teams', image: ability2 }} />
                 </li>
-                <li className="functions__item">
-                    <Ability data={{ title: 'Форма публикации', number: 3, desc: '~5 минут', url: '/post-form', image: false }} />
-                </li>
-                <li className="functions__item">
-                    <Ability data={{ title: 'Мой профиль', number: 4, desc: '4 Игры', url: '/profile', image: ability4 }} />
-                </li>
+                {/*<li className="functions__item">*/}
+                {/*    <Ability data={{ title: 'Форма публикации', number: 3, desc: '~5 минут', url: '/post-form', image: false }} />*/}
+                {/*</li>*/}
+                {/*<li className="functions__item">*/}
+                {/*    <Ability data={{ title: 'Мой профиль', number: 4, desc: '4 Игры', url: '/profile', image: ability4 }} />*/}
+                {/*</li>*/}
             </ul>
         </section>
     );

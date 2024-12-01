@@ -1,58 +1,76 @@
 import React from 'react';
 import './Card.scss';
 import cover from '@assets/cover-game2.png'
-import bgCover from '@assets/cover-game3.png'
-import avatar from '@assets/avatar1.png'
+import bgCover from '@assets/cover-game19.png'
+import game from '@assets/game-pic.png'
 import miniCover from '@assets/cover-game4.png'
 import arrows from '@assets/arrows.svg';
+import IconBlock from "./CardBlocks/IconBlock";
+import icon1 from '@assets/test-icon1.png';
+import icon2 from '@assets/test-icon2.png';
+import icon4 from '@assets/test-icon4.png';
+
 const CardCollection = ({ version }:any) => {
     return (
         <div>
+            {version === 'icons' &&
+                <div className="collection__card-game card-game card-game--icons">
+                    <IconBlock srcIcon={icon1} text={"Играй в уникальные игры первым"}/>
+                    <IconBlock reverse alignEnd srcIcon={icon2} text={"Находи друзей и общайся с единомышленниками"}/>
+                    <IconBlock srcIcon={icon2} text={"Загружай свои игры, делая свой вклад в мир гейминга"}/>
+                    <IconBlock reverse srcIcon={icon4} text={"Найди талантливых соавторов или команду для своего проекта"}/>
+                </div>
+            }
             { version === 'standart' &&
             <div className="collection__card-game card-game">
                 {/* <img src={cover} alt="Cover for game" className="card-game__cover" /> */}
-                <svg className="card-game__cover" xmlns="http://www.w3.org/2000/svg" width="420" height="220" viewBox="0 0 420 220" fill="none">
-                    <mask id="imageMask">
-                        <path fill="#fff" d="M50 0C22.3858 0 0 22.3858 0 50V170C0 197.614 22.3858 220 50 220H250C277.614 220 300 197.614 300 170C300 197.614 322.386 220 350 220H370C397.614 220 420 197.614 420 170V50C420 22.3858 397.614 0 370 0H350C322.386 0 300 22.3858 300 50C300 22.3858 277.614 0 250 0H50Z" />
-                    </mask>
-                    <image
-                        mask="url(#imageMask)"
-                        width="100%"
-                        xlinkHref={cover}
-                    />
-                </svg>
+                {/*<svg className="card-game__cover" xmlns="http://www.w3.org/2000/svg" width="420" height="220" viewBox="0 0 420 220" fill="none">*/}
+                {/*    <mask id="imageMask">*/}
+                {/*        <path fill="#fff" d="M50 0C22.3858 0 0 22.3858 0 50V170C0 197.614 22.3858 220 50 220H250C277.614 220 300 197.614 300 170C300 197.614 322.386 220 350 220H370C397.614 220 420 197.614 420 170V50C420 22.3858 397.614 0 370 0H350C322.386 0 300 22.3858 300 50C300 22.3858 277.614 0 250 0H50Z" />*/}
+                {/*    </mask>*/}
+                {/*    <image*/}
+                {/*        mask="url(#imageMask)"*/}
+                {/*        width="100%"*/}
+                {/*        xlinkHref={cover}*/}
+                {/*    />*/}
+                {/*</svg>*/}
                 <div className="card-game__info">
-                    <h3 className="card-game__title">В объективе!</h3>
-                    <p className="card-game__desc">Вы - блогер, путешествующий по России. Создавайте впечатляющие фотографии, изучайте новые места для путешествий!</p>
+                    <img src={game}></img>
+                    {/*<h3 className="card-game__title">В объективе!</h3>*/}
+                    <p className="card-game__desc">Мы - команда студентов Московского Политеха, и мы рады приветствовать вас на нашем игровом портале PolyGames, где вы можете открыть для себя удивительные проекты, которые были созданы нашими студентами.</p>
                 </div>
-                <a href="/" className="card-game__link">
-                    <p className="card-game__more">Подробнее</p>
-                    <svg className="card-game__arrow" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                        <circle cx="25" cy="25" r="25" fill="#FF5731"/>
-                        <path d="M32.4642 18.6363C32.4642 18.0288 31.9717 17.5363 31.3642 17.5363L21.4642 17.5363C20.8566 17.5363 20.3642 18.0288 20.3642 18.6363C20.3642 19.2438 20.8566 19.7363 21.4642 19.7363L30.2642 19.7363L30.2642 28.5363C30.2642 29.1438 30.7566 29.6363 31.3642 29.6363C31.9717 29.6363 32.4642 29.1438 32.4642 28.5363L32.4642 18.6363ZM19.414 32.1421L32.142 19.4142L30.5863 17.8585L17.8584 30.5864L19.414 32.1421Z" fill="white"/>
-                    </svg>
-                </a>
+                {/*<a href="/" className="card-game__link">*/}
+                {/*    <p className="card-game__more">Подробнее</p>*/}
+                {/*    <svg className="card-game__arrow" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">*/}
+                {/*        <circle cx="25" cy="25" r="25" fill="#FF5731"/>*/}
+                {/*        <path d="M32.4642 18.6363C32.4642 18.0288 31.9717 17.5363 31.3642 17.5363L21.4642 17.5363C20.8566 17.5363 20.3642 18.0288 20.3642 18.6363C20.3642 19.2438 20.8566 19.7363 21.4642 19.7363L30.2642 19.7363L30.2642 28.5363C30.2642 29.1438 30.7566 29.6363 31.3642 29.6363C31.9717 29.6363 32.4642 29.1438 32.4642 28.5363L32.4642 18.6363ZM19.414 32.1421L32.142 19.4142L30.5863 17.8585L17.8584 30.5864L19.414 32.1421Z" fill="white"/>*/}
+                {/*    </svg>*/}
+                {/*</a>*/}
             </div> }
             { version === 'solid' &&
             <div className="collection__card-game card-game card-game--solid" style={{ backgroundImage: `url(${bgCover})` }}>
-                <a href="/" className="card-game__author">
-                    <img src={avatar} alt="Avatar developer" className="card-game__ava" />
-                    <div className="card-game__user">
-                        <p className="card-game__role">Разработчик</p>
-                        <h4 className="card-game__name">IAvocadoI</h4>
-                    </div>
-                </a>
-                <div className="card-game__info card-game__info--solid">
-                    <h3 className="card-game__title">Latest Days</h3>
-                    <p className="card-game__desc">Это лучший день в твоей жизни. Ни забот, ни печалей. Просто насладись днем у себя дома.</p>
+                <div className="card-game__info card-game__info__simple card-game__info--solid">
+                <h3 className="card-game__title">Разработчикам</h3>
+                <p className="card-game__desc">PolyGames - ваша платформа для выражения творчества. Не теряйте шанс поделиться своими игровыми мирами с нашим сообществом - загружайте свои игры.</p>
                 </div>
-                <a href="/" className="card-game__link card-game__link--solid">
-                    <p className="card-game__more">Подробнее</p>
-                    <svg className="card-game__arrow card-game__arrow--solid" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                        <circle cx="25" cy="25" r="25" fill="#FF5731"/>
-                        <path d="M32.4642 18.6363C32.4642 18.0288 31.9717 17.5363 31.3642 17.5363L21.4642 17.5363C20.8566 17.5363 20.3642 18.0288 20.3642 18.6363C20.3642 19.2438 20.8566 19.7363 21.4642 19.7363L30.2642 19.7363L30.2642 28.5363C30.2642 29.1438 30.7566 29.6363 31.3642 29.6363C31.9717 29.6363 32.4642 29.1438 32.4642 28.5363L32.4642 18.6363ZM19.414 32.1421L32.142 19.4142L30.5863 17.8585L17.8584 30.5864L19.414 32.1421Z" fill="white"/>
-                    </svg>
-                </a>
+                {/*<a href="/" className="card-game__author">*/}
+                {/*    <img src={avatar} alt="Avatar developer" className="card-game__ava" />*/}
+                {/*    <div className="card-game__user">*/}
+                {/*        <p className="card-game__role">Разработчик</p>*/}
+                {/*        <h4 className="card-game__name">IAvocadoI</h4>*/}
+                {/*    </div>*/}
+                {/*</a>*/}
+                {/*<div className="card-game__info card-game__info--solid">*/}
+                    {/*<h3 className="card-game__title">Latest Days</h3>*/}
+                    {/*<p className="card-game__desc">Это лучший день в твоей жизни. Ни забот, ни печалей. Просто насладись днем у себя дома.</p>*/}
+                {/*</div>*/}
+                {/*<a href="/" className="card-game__link card-game__link--solid">*/}
+                {/*    <p className="card-game__more">Подробнее</p>*/}
+                {/*    <svg className="card-game__arrow card-game__arrow--solid" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">*/}
+                {/*        <circle cx="25" cy="25" r="25" fill="#FF5731"/>*/}
+                {/*        <path d="M32.4642 18.6363C32.4642 18.0288 31.9717 17.5363 31.3642 17.5363L21.4642 17.5363C20.8566 17.5363 20.3642 18.0288 20.3642 18.6363C20.3642 19.2438 20.8566 19.7363 21.4642 19.7363L30.2642 19.7363L30.2642 28.5363C30.2642 29.1438 30.7566 29.6363 31.3642 29.6363C31.9717 29.6363 32.4642 29.1438 32.4642 28.5363L32.4642 18.6363ZM19.414 32.1421L32.142 19.4142L30.5863 17.8585L17.8584 30.5864L19.414 32.1421Z" fill="white"/>*/}
+                {/*    </svg>*/}
+                {/*</a>*/}
             </div> }
             { version === 'mini' &&
             <div className="collection__card-game card-game card-game--mini">
