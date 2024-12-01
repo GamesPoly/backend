@@ -7,45 +7,25 @@
 .hero__tools {
     min-width: 228px;
 }
-.navigate {
+.hero__left {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: space-between;
+    height: 100%;
 }
 
-.navigate__decoration {
+.hero__decoration {
     height: 21px;
     width: 21px;
 }
 
-.navigate__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.navigate__link {
-    color: var(--text-secondary);
-    line-height: 1;
-    text-decoration: none;
-    transition: .3s;
-    @include adaptiv-font(20, 14);
-    &--active {
-        color: var(--text-primary);
-    }
-    &:hover {
-        opacity: 0.85;
-    }
-}
 
 .last-update {
     display: flex;
+    position: relative;
     gap: 20px;
     max-height: 110px;
-    margin-top: 70px;
 }
 
 .last-update__cover {
@@ -144,7 +124,7 @@
     position: absolute;
     display: flex;
     gap: 40px;
-    right: -50px;
+    right: 1px;
     top: 25px;
 }
 
