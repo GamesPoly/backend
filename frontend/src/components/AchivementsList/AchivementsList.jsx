@@ -13,7 +13,7 @@ function AchivementsList({title, achivements}) {
                 </Link>
             </div>
             <ul className="list__body">
-                {achivements.map((achivement) => <AchivementsItem name={achivement.name} desc={achivement.desc} cover={achivement.cover} key={achivement.name}/>)}
+                {achivements.map((achivement) => <AchivementsItem name={achivement.name} cover={achivement.cover} key={achivement.name}/>)}
             </ul>
             
         </section>

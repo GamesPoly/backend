@@ -1,0 +1,29 @@
+@import '@/variables.scss';
+
+.achivement__content {
+    height: 200px;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: var(--background-color);
+    border: 1px solid var(--accent-color);
+    transition: all 1.3s ease;
+}
+.achivement__cover {
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 100px;
+    box-shadow: $shadow-x1;
+    justify-self: center;
+    object-fit: cover;
+}
+
+.achivement__text {
+    margin-top: .5rem;
+}
+
+.achivement__title {
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: .2rem;
+    text-align: center;
+}
