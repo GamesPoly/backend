@@ -172,8 +172,13 @@
     background-color: var(--background-detailed);
     max-width: 1440px;
     margin: 0 auto;
+    margin-top: 75px;
     padding: 50px 75px;
     border-radius: 40px;
+    @media (max-width: 750px) {
+        align-items: center;
+        padding: 30px;
+    }
 }
 
 .first__block {
@@ -187,6 +192,10 @@
 
 .person__img {
     width: 206px;
+
+    @media (max-width: 1200px) {
+        display: none;
+    }
 }
 
 .down__text {
@@ -195,11 +204,39 @@
     align-items: center;
     justify-content: space-between;
     margin-left: 75px;
+    @media (max-width: 1200px) {
+        margin: 0;
+        width: unset;
+    }
 }
 
 .down__text p {
     font-size: 38px;
     line-height: 67px;
+    @media (max-width: 1200px) {
+        width: unset;
+        font-weight: 500;
+    }
+    @media (max-width: 750px) {
+        font-size: 16px;
+        line-height: 200%;
+    }
+}
+
+.down__text h1 {
+    @media (max-width: 1200px) {
+        width: unset;
+    }
+    @media (max-width: 750px) {
+        font-size: 24px;
+    }
+}
+
+.down__text h1:nth-child(5) {
+    font-size: 40px;
+    @media (max-width: 750px) {
+        font-size: 16px;
+    }
 }
 
 .registration__btn {
@@ -214,6 +251,11 @@
     border-radius: 50px;
     padding: 5px 7px;
     margin-right: 20px;
+    @media (max-width: 750px) {
+        width: 140px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
 }
 
 .btn__circle {
@@ -237,4 +279,7 @@
 
 .describe__p {
     margin-right: 10px;
+    @media (max-width: 750px) {
+        font-size: 16px;
+    }
 }
