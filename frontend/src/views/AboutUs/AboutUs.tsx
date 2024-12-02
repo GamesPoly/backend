@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Preview from './Preview/Preview'
 import styles from './AboutUs.module.scss'
 import WeAre from './WeAre/WeAre'
 import CanDo from './CanDo/CanDo'
 import ForDevelopers from './ForDevelopers/ForDevelopers'
-const AboutUs = ({ setIsFooterVisible }) => {
-    useEffect(() => {
-        setIsFooterVisible(true)
-    }, [])
-
+import lines from './lines1.svg'
+const AboutUs = () => {
     return (
-        <main className={styles['about-us__wrapper']}>
+        <main
+            className={styles['about-us__wrapper']}
+            style={{ backgroundImage: `url(${lines})` }}
+        >
             <Preview />
             <WeAre />
             <CanDo />

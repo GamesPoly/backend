@@ -1,9 +1,10 @@
 @import '@/variables.scss';
 .preview {
     display: flex;
-    justify-content: space-around;
-    gap: 10vw;
-    padding: 8vh 5vw;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 76px 120px;
+    max-height: 546px;
     border-radius: 40px;
     background: var(--background-secondary);
 }
@@ -11,14 +12,21 @@
 .preview__left-side {
     display: flex;
     flex-direction: column;
+    min-width: 220px;
     justify-content: space-around;
 }
 
 .preview__logo {
-    width: 20vw;
+    max-width: 312px;
 }
 
 .preview__text {
-    width: 26vw;
+    max-width: 440px;
+    font-size: 38px;
+}
+
+.preview__photo {
+    object-fit: contain;
+    width: 50%;
     font-size: 38px;
 }
