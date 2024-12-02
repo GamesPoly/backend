@@ -12,4 +12,47 @@
     align-items: center;
     list-style: none;
     transition: all 0.3s ease;
+
+    & li:nth-child(1) div:first-child {
+        background: linear-gradient(
+            to right,
+            hsla(308, 100%, 80%, 1),
+            hsla(262, 100%, 81%, 1)
+        );
+    }
+    & li:nth-child(2) div:first-child {
+        background: linear-gradient(
+            to right,
+            hsla(262, 100%, 81%, 1),
+            hsla(308, 100%, 80%, 1)
+        );
+    }
+    & li:nth-child(3) div:first-child {
+        background: linear-gradient(
+            to right,
+            hsla(262, 100%, 81%, 1),
+            hsla(308, 100%, 80%, 1)
+        );
+    }
+    & li:nth-child(4) div:first-child {
+        background: linear-gradient(
+            to right,
+            hsla(262, 100%, 81%, 1),
+            hsla(308, 100%, 80%, 1)
+        );
+    }
+    & li:nth-child(5) div:first-child {
+        background: linear-gradient(
+            to right,
+            hsla(308, 100%, 80%, 1),
+            hsla(343, 63%, 73%, 1)
+        );
+    }
+    & li:nth-child(6) div:first-child {
+        background: linear-gradient(
+            to right,
+            hsla(343, 63%, 73%, 1),
+            hsla(11, 100%, 60%, 1)
+        );
+    }
 }
