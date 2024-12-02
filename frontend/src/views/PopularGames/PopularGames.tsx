@@ -2,6 +2,12 @@ import React from 'react'
 import styles from './PopularGames.module.scss'
 import GameBanner from './GameBanner/GameBanner'
 import cover1 from '@assets/cover-game4.png'
+import card_games_cover from '@assets/card-games.svg'
+import strategy_games_cover from '@assets/strategy-games.svg'
+import role_play_games_cover from '@assets/role-play-games.svg'
+import FPS_games_cover from '@assets/FPS-games.svg'
+import adventure_games_cover from '@assets/adventure-games.svg'
+import action_games_cover from '@assets/action-games.svg'
 import GamesList from './GamesList/GamesList'
 import GenresList from './GenresList/GenresList'
 
@@ -76,28 +82,28 @@ const PopularGenres = [
         title: 'Популярные жанры',
         genres: [
             {
-                name: 'Simulation',
-                cover: cover1,
+                name: 'Карточные',
+                cover: card_games_cover,
             },
             {
-                name: 'Simulation',
-                cover: cover1,
+                name: 'Шутеры',
+                cover: FPS_games_cover,
             },
             {
-                name: 'Simulation',
-                cover: cover1,
+                name: 'Стратегии',
+                cover: strategy_games_cover,
             },
             {
-                name: 'Simulation',
-                cover: cover1,
+                name: 'Экшены',
+                cover: action_games_cover,
             },
             {
-                name: 'Simulation',
-                cover: cover1,
+                name: 'Ролевые',
+                cover: role_play_games_cover,
             },
             {
-                name: 'Simulation',
-                cover: cover1,
+                name: 'Приключения',
+                cover: adventure_games_cover,
             },
         ],
     },

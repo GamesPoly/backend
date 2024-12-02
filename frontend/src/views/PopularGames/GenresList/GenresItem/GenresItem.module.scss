@@ -7,9 +7,15 @@
     box-sizing: border-box;
     margin-top: 40px;
 }
-
-.genres-list__card-cover {
+.genres-list__card__top {
     width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.genres-list__card-cover {
+    object-position: center;
     object-fit: cover;
 }
 
