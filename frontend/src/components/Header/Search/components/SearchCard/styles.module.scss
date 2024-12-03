@@ -7,7 +7,7 @@
     height: 100px;
     color: white;
     text-decoration: none;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
 
     &:hover .search_card__name {
         color: #9960ff;
@@ -18,9 +18,8 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-   border-radius: 16px;
-   padding-inline: 16px;
-   
+    border-radius: 16px;
+    padding-inline: 16px;
 }
 .search_card__img {
     width: 90px;

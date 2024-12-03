@@ -2,14 +2,20 @@
 
 .card-game {
     position: relative;
-    background-color: var(--background-secondary);
+    background-color: var(--background-extra);
     padding: 20px;
     border-radius: 30px;
     // width: 420px;
     height: 526px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    //justify-content: flex-end;
+    &--icons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+    }
     &--solid {
         background-size: cover;
         background-position: center;
@@ -30,6 +36,7 @@
         }
 
         .card-game__title {
+            font-size: 38px;
             color: white;
         }
 
@@ -79,8 +86,14 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    margin-top: 16px;
+    gap: 40px;
+    //margin-top: 16px;
+
+    &__simple {
+        height: 390px;
+        gap: initial;
+        justify-content: space-between;
+    }
     &--solid {
         position: relative;
         z-index: 2;
@@ -94,25 +107,25 @@
     font-size: 28px;
     font-weight: 500;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 34px;
+    //display: -webkit-box;
+    //-webkit-line-clamp: 1;
+    //-webkit-box-orient: vertical;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //max-height: 34px;
 }
 
 .card-game__desc {
     width: fit-content;
     font-size: 24px;
     font-weight: 400;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    //display: -webkit-box;
+    //-webkit-line-clamp: 3;
+    //-webkit-box-orient: vertical;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
     max-width: 400px;
-    max-height: 82px;
+    //max-height: 82px;
 }
 
 .card-game__link {
@@ -990,5 +1003,22 @@
     &:hover {
         transition: all 0.15s ease;
         opacity: 0.85;
+    }
+}
+
+.icon-block {
+    display: flex;
+    justify-content: space-between;
+
+    &--reverse {
+        flex-direction: row-reverse;
+    }
+
+    &__icon {
+        object-fit: contain;
+    }
+
+    &__text {
+        max-width: 260px;
     }
 }

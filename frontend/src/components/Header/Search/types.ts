@@ -1,8 +1,8 @@
-import { Game } from "views/Catalog/components/CatalogGamesContent/types";
+import { Game } from 'views/Catalog/components/CatalogGamesContent/types'
 
-export type gamesSearchResults = Game[];
+export type gamesSearchResults = Game[]
 export type gamesSearchError = {
-  error: true;
-  message: string;
-};
+    error: true
+    message: string
+}
 export type game = Game

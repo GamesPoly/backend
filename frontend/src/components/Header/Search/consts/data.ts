@@ -1,4 +1,4 @@
-export const jsonData:string = `[    {
+export const jsonData: string = `[    {
       "id": "1",
       "imageUrl": "https://utfs.io/f/P7JeVg86bGVgrmww9tKDQXvcpidKqhH6tJzso2e5bZW4VI0f",
       "name": "Neo_Cat",
