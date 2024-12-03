@@ -3,7 +3,7 @@ import styles from './Head.module.scss'
 
 const CollectionHead = () => {
     return (
-        <div className="collection__head">
+        <div className={styles.collection__head}>
             {/*<button className="collection__currently currently">*/}
             {/*    <p className="currently__text">Популярное</p>*/}
             {/*    <svg className='currently__arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">*/}
@@ -11,7 +11,7 @@ const CollectionHead = () => {
             {/*    </svg>*/}
             {/*</button>*/}
             {/*<div className="collection__headline">*/}
-            <h2 className="collection__name">О нас</h2>
+            <h2 className={styles.collection__name}>О нас</h2>
             {/*<div className="collection__action">*/}
             {/*    <button className="collection__dot collection__dot--active">*/}
             {/*        <p className="visually-hidden">Переключатель 1</p> */}
