@@ -1,5 +1,5 @@
-import React from 'react';
-import './Head.scss';
+import React from 'react'
+import styles from './Head.module.scss'
 
 const CollectionHead = () => {
     return (
@@ -11,15 +11,15 @@ const CollectionHead = () => {
             {/*    </svg>*/}
             {/*</button>*/}
             {/*<div className="collection__headline">*/}
-                <h2 className="collection__name">О нас</h2>
-                {/*<div className="collection__action">*/}
-                {/*    <button className="collection__dot collection__dot--active">*/}
-                {/*        <p className="visually-hidden">Переключатель 1</p> */}
-                {/*    </button>*/}
-                {/*    <button className="collection__dot">*/}
-                {/*        <p className="visually-hidden">Переключатель 2</p> */}
-                {/*    </button>*/}
-                {/*</div>*/}
+            <h2 className="collection__name">О нас</h2>
+            {/*<div className="collection__action">*/}
+            {/*    <button className="collection__dot collection__dot--active">*/}
+            {/*        <p className="visually-hidden">Переключатель 1</p> */}
+            {/*    </button>*/}
+            {/*    <button className="collection__dot">*/}
+            {/*        <p className="visually-hidden">Переключатель 2</p> */}
+            {/*    </button>*/}
+            {/*</div>*/}
             {/*</div>*/}
             {/*<button className="collection__next-info next-info">*/}
             {/*    <svg className='next-info__arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">*/}
@@ -28,7 +28,7 @@ const CollectionHead = () => {
             {/*    <p className="next-info__text">О нас</p>*/}
             {/*</button>*/}
         </div>
-    );
-};
+    )
+}
 
-export default CollectionHead;
+export default CollectionHead
