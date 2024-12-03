@@ -10,7 +10,7 @@
     font-size: 20px;
     background: var(--background-secondary);
     padding: 0 6px;
-    transition: all 1.3s;
+    transition: all 0.5s ease;
 
     &__btn {
         display: flex;
@@ -25,7 +25,7 @@
         color: var(--text-primary);
         height: 38px;
         padding: 0 18px;
-        transition: all 1s linear;
+        transition: all 0.5s ease;
         &:hover {
             background-color: var(--background-color);
         }
